@@ -27,12 +27,12 @@
       "required": true
     },
     "GROUP_LINK": {
-      "description": "your group support link, can use private or public group,
+      "description": "your group support link, can use private or public group",
       "required": false,
       "value": "https://t.me/AnonymousRobotSupport"
     },
     "CHANNEL_LINK": {
-      "description": "your channel support link, can use private or public channel,
+      "description": "your channel support link, can use private or public channel",
       "required": false,
       "value": "https://t.me/AnonymousRobotSupport"
     },
