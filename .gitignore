@@ -1,0 +1,10 @@
+venv/*
+__pycache__
+.idea
+**/__pycache__
+search/*
+.code
+*.session*
+test*.py
+local.env
+solid.db

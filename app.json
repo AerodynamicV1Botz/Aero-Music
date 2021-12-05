@@ -1,0 +1,58 @@
+{
+  "name": "AnonymousVCPlayer Bot",
+  "description": "Open Source bot to stream media trough Telegram Voice Chat. Powered by PyTgCalls and Pyrogram",
+  "logo": "https://telegra.ph/file/9a85d0a873e2dd80d278d.jpg",
+  "keywords": ["AnonymousMusic", "MusicBot", "Video-stream", "Videochat", "Voicechat", "Telegram"],
+  "repository": "https://github.com/AnonymousBoy1025/AnonymousVCPlayer",
+  "stack": "container",
+  "env": {
+    "API_ID": {
+      "description": "Fill it with your API_ID, get it from my.telegram.org/apps",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Fill it with your API_HASH, get it from my.telegram.org/apps",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Fill it with your Bot token, get it from @BotFather",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Fill it with your telegram id, not api id",
+      "required": true
+    },
+    "SESSION": {
+      "description": "Fill it with your assistant session string",
+      "required": true
+    },
+    "GROUP_LINK": {
+      "description": "your group support link, can use private or public group,
+      "required": false,
+      "value": "https://t.me/AnonymousRobotSupport"
+    },
+    "CHANNEL_LINK": {
+      "description": "your channel support link, can use private or public channel,
+      "required": false,
+      "value": "https://t.me/AnonymousRobotSupport"
+    },
+    "UPSTREAM_REPO": {
+      "description": "fill it if you fork from original repo",
+      "required": false,
+      "value": "https://github.com/AnonymousBoy1025/AnonymousVCPlayer"
+    },
+    "AUTO_LEAVE": {
+      "description": "fill it with delay time for leaving group, fill 0 if you do not want to use this feature",
+      "required": false,
+      "value": "0"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ]
+}
