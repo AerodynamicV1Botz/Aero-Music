@@ -20,11 +20,10 @@ and <a href="https://github.com/pyrogram/pyrogram">Pyrogram</a>
 
 <h3>Telegram</h3>
 <ul>
-    <a href="https://t.me/AnonymousRobotSupport"><img alt="AnonymousSupport" src="https://img.shields.io/badge/AnonymousRobotSupport-blue.svg?logo=telegram"></a> <br/>
-    <a href="https://t.me/AnonymousRobotSupport"><img alt="AnonymousSupport" src="https://img.shields.io/badge/AnonymousRobotSupport-blue.svg?logo=telegram"></a> <br/>
+    <a href="https://telegram.me/AnonymousRobotSupport"><img alt="AnonymousSupport" src="https://img.shields.io/badge/AnonymousRobotSupport-blue.svg?logo=telegram"></a> <br/>
 </ul>
 
-## 🚀 Deploy on Heroku 
+## ❤ Deploy on Heroku ❤
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/AnonymousBoy1025/AnonymousVCPlayer)
 ------------------------------------------------
 -------------------------------------------------
