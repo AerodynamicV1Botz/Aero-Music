@@ -89,7 +89,7 @@
   "give_input": "**» ɢɪᴠᴇ ᴍᴇ ɪɴᴘᴜᴛ (ʙᴏᴛ|ᴜsᴇʀ)**",
   "invalid_gcast_type": "**» ɪɴᴠᴀʟɪᴅ ɢᴄᴀsᴛ ᴛʏᴘᴇ, ᴀᴄᴄᴇᴘᴛᴇᴅ ᴏɴʟʏ (ʙᴏᴛ|ᴜsᴇʀ).**",
   "ping_text": "`ᴘɪɴɢɪɴɢ ʙᴀʙʏ...`",
-  "pong_text": "`🏓 ᴘᴏɴɢ...\nPyrogram latency: {}ms\nPyTgCalls latency: {}ms",
+  "pong_text": "`ᴅᴏɴ'ᴛ ᴡᴏʀʀʏ ʙᴀʙʏ...🖤\nɪ ᴀᴍ ᴀʟɪᴠᴇ\nᴘʏʀᴏɢʀᴀᴍ ʟᴀᴛᴇɴᴄʏ: {}ms\nᴘʏᴛɢᴄᴀʟʟs ʟᴀᴛᴇɴᴄʏ: {}ms",
   "need_add_user_permission": "**» ɪ ɴᴇᴇᴅ ᴛʜᴇ** `ᴀᴅᴅ ɴᴇᴡ ᴀᴅᴍɪɴs` **ᴘᴇʀᴍɪssɪᴏɴ**.",
   "del_cmd_mode_already_set": "**» ᴅᴇʟᴇᴛᴇ ᴄᴏᴍᴍᴀɴᴅ ᴀʟʀᴇᴀᴅʏ sᴇᴛ ᴛᴏ {}**",
   "del_cmd_changed": "**» ᴅᴇʟᴇᴛᴇ ᴄᴏᴍᴍᴀɴᴅ ᴄʜᴀɴɢᴇᴅ ᴛᴏ {}**",
