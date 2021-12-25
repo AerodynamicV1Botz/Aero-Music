@@ -41,7 +41,6 @@ async def pm_start(_, message: Message):
 📌 **{gm(chat_id, 'yt_title')}**: {details['title']}
 🕰 **{gm(chat_id, 'duration')}**: {details['duration']}
 👍 **{gm(chat_id, 'yt_likes')}**: {details['likes']}
-👎 **{gm(chat_id, 'yt_dislikes')}**: {details['dislikes']}
 ⭐ **{gm(chat_id, 'yt_rating')}**: {details['rating']}
 """
                 return await message.reply_photo(
@@ -72,7 +71,7 @@ async def pm_start(_, message: Message):
                             [
                                 InlineKeyboardButton(
                                     f"{gm(chat_id, 'commands')}",
-                                    url="https://telegra.ph/The-Bot-Command-11-14",
+                                    url="https://telegra.ph/Anonymous-VC-Player-12-07-2",
                                 )
                             ]
                         ]
