@@ -63,7 +63,7 @@ async def pm_start(_, message: Message):
                         ]
                     ),
                 )
-            if query.startswith("help"):
+            if query.startswitch("help"):
                 return await message.reply(
                     gm(chat_id, "helpmusic"),
                     reply_markup=InlineKeyboardMarkup(
@@ -85,7 +85,7 @@ async def pm_start(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            gm(message.chat.id, "group_buttn"),
+                            gm(message.chat.id, "group_button"),
                             url=f"https://t.me/{bot_username}?start=help",
                         )
                     ]
