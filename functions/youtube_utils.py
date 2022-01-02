@@ -1,11 +1,12 @@
-from typing import List, Dict
-
-import requests
-from yt_dlp import YoutubeDL
+import aiofiles
+import aiohttp
 from youtubesearchpython import VideosSearch
 
-from core import username
-from database.lang_utils import get_message as gm
+from typing import List, Dict
+from yt_dlp import YoutubeDL
+
+from core import bot_username
+from database.lang_utils import gm
 
 new: Dict[int, List] = {}
 old: Dict[int, List[List[Dict]]] = {}
@@ -37,7 +38,6 @@ def get_yt_details(yt_url: str):
             "rating": round(float(infos["average_rating"]), 2),
             "views": infos["view_count"],
             "likes": infos["like_count"],
-            "dislikes": infos["dislike_count"],
             "link": yt_url,
         }
         return result
@@ -102,25 +102,24 @@ def prev_search(chat_id: int):
     append_to_music(chat_id, yt_res)
 
 
-def extract_info(chat_id: int, result: Dict[int, List]):
+async def extract_info(chat_id: int, result: Dict[int, List]):
     result_str = ""
     res = list(filter(None, result[chat_id]))
     for count, res in enumerate(res[0], start=1):
         title = res["title"]
         duration = res["duration"]
-        more_info = f"https://t.me/{username}?start=ytinfo_{res['yt_id']}"
+        more_info = f"https://t.me/{bot_username}?start=ytinfo_{res['yt_id']}"
         result_str += f"""
 {count}.
-{gm(chat_id, 'yt_title')}: {title[:35] + '...' if len(title) >= 35 and not title.endswith(' ') else res['title']}
-{gm(chat_id, 'duration')}: {duration}
-[{gm(chat_id, 'more_info')}]({more_info})
+{await gm(chat_id, 'yt_title')}: {title[:35] + '...' if len(title) >= 35 and not title.endswith(' ') else res['title']}
+{await gm(chat_id, 'duration')}: {duration}
+[{await gm(chat_id, 'more_info')}]({more_info})
 """
     return result_str
 
 
-def download_yt_thumbnails(thumb_url, user_id):
-    r = requests.get(thumb_url)
-    with open(f"search/thumb{user_id}.jpg", "wb") as file:
-        for chunk in r.iter_content(1024):
-            file.write(chunk)
-    return f"search/thumb{user_id}.jpg"
+async def download_yt_thumbnails(thumb_url: str, user_id: int):
+    async with aiohttp.ClientSession() as session, session.get(thumb_url) as res:
+        async with aiofiles.open(f"search/thumb{user_id}.png", "wb") as f:
+            await f.write(res.read())
+            await f.close()
