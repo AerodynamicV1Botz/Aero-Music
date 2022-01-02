@@ -3,13 +3,11 @@ from typing import Callable
 from pyrogram import types, Client
 from pyrogram.errors import MessageDeleteForbidden
 
-from database.sudo_database import SudoDB
-from database.chat_database import ChatDB
+import configs
+from database.db import dbs
 from core.bot import Bot
 from core.clients import user
 
-db = SudoDB()
-chat_db = ChatDB()
 bot = Bot()
 
 
@@ -21,10 +19,10 @@ def authorized_only(func: Callable) -> Callable:
         user_id = message.from_user.id
         chat_id = message.chat.id
         member = await message.chat.get_member(user_id)
-        if member.status not in [
-            "creator",
-            "administrator",
-        ] and user_id not in db.get_sudos(chat_id):
+        if member.status not in ["creator", "administrator"] and (
+            user_id not in await dbs.get_sudos(chat_id)
+            or user_id != configs.config.OWNER_ID
+        ):
             return await bot.send_message(
                 chat_id,
                 "not_allowed",
@@ -33,8 +31,9 @@ def authorized_only(func: Callable) -> Callable:
             return await bot.send_message(chat_id, "need_privilege")
         if (
             member.status in ["creator", "administrator"]
-            or user_id in db.get_sudos(chat_id)
+            or user_id in await dbs.get_sudos(chat_id)
             or user_id == client_user_id
+            or user_id == configs.config.OWNER_ID
         ):
             return await func(client, message)
 
@@ -49,13 +48,16 @@ def only_admin(func: Callable) -> Callable:
         chat_id = message.chat.id
         user_id = message.from_user.id
         try:
-            admin_only = bool(chat_db.get_chat(chat_id)[0]["only_admin"])
+            admin_only = bool((await dbs.get_chat(chat_id))["only_admin"])
         except IndexError:
-            ChatDB().add_chat(chat_id)
-            admin_only = bool(chat_db.get_chat(chat_id)[0]["only_admin"])
+            await dbs.get_chat(chat_id)
+            admin_only = bool((await dbs.get_chat(chat_id))["only_admin"])
         if admin_only:
             member = await message.chat.get_member(user_id)
-            if member.status not in ["creator", "administrator"]:
+            if (
+                member.status not in ["creator", "administrator"]
+                or user_id != configs.config.OWNER_ID
+            ):
                 return await bot.send_message(
                     chat_id,
                     "not_allowed",
@@ -65,6 +67,7 @@ def only_admin(func: Callable) -> Callable:
             if (
                 member.status in ["creator", "administrator"]
                 or user_id == client_user_id
+                or user_id == configs.config.OWNER_ID
             ):
                 return await func(client, message)
         elif not admin_only:
@@ -79,10 +82,10 @@ def del_cmd(func: Callable) -> Callable:
         if message.chat.type == "private":
             return await func(client, message)
         try:
-            delete_cmd = bool(chat_db.get_chat(chat_id)[0]["del_cmd_mode"])
+            delete_cmd = bool((await dbs.get_chat(chat_id))["del_cmd_mode"])
         except IndexError:
-            ChatDB().add_chat(chat_id)
-            delete_cmd = bool(chat_db.get_chat(chat_id)[0]["del_cmd_mode"])
+            await dbs.add_chat(chat_id)
+            delete_cmd = bool((await dbs.get_chat(chat_id))["del_cmd_mode"])
         if delete_cmd:
             try:
                 await client.delete_messages(chat_id, message.message_id)
@@ -90,6 +93,7 @@ def del_cmd(func: Callable) -> Callable:
                 pass
             return await func(client, message)
         return await func(client, message)
+
     return wrapper
 
 
@@ -99,11 +103,13 @@ def check_player(func: Callable) -> Callable:
         if message.command[0] == "player":
             return await func(client, message)
         try:
-            player_mode = bool(chat_db.get_chat(chat_id)[0]["player_mode"])
+            get_player_mode = (await dbs.get_chat(chat_id))["player_mode"]
+            player_mode = bool(get_player_mode)
         except IndexError:
-            ChatDB().add_chat(chat_id)
-            player_mode = bool(chat_db.get_chat(chat_id)[0]["player_mode"])
+            await dbs.add_chat(chat_id)
+            player_mode = bool((await dbs.get_chat(chat_id))["player_mode"])
         if player_mode:
             return await func(client, message)
         return await Bot().send_message(chat_id, "player_is_nonactive")
+
     return wrapper
