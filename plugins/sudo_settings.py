@@ -11,9 +11,9 @@ async def process_sudo(message: types.Message, status: str):
     if reply:
         user_id = reply.from_user.id
         key = (
-            SudoDB().add_sudo(chat_id, user_id)
+            await SudoDB().add_sudo(chat_id, user_id)
             if status == "add"
-            else SudoDB().del_sudo(chat_id, user_id)
+            else await SudoDB().del_sudo(chat_id, user_id)
         )
         return await Bot().send_message(chat_id, key)
     users = message.command[1:]
@@ -27,34 +27,34 @@ async def process_sudo(message: types.Message, status: str):
             else:
                 user_id = (await message.chat.get_member(user_ids)).user.id
             key = (
-                SudoDB().add_sudo(chat_id, user_id)
+                await SudoDB().add_sudo(chat_id, user_id)
                 if status == "add"
-                else SudoDB().del_sudo(chat_id, user_id)
+                else await SudoDB().del_sudo(chat_id, user_id)
             )
             return await Bot().send_message(chat_id, key)
     user = message.command[1]
     if user.startswith("@"):
         user_id = (await message.chat.get_member(user)).user.id
         key = (
-            SudoDB().add_sudo(chat_id, user_id)
+            await SudoDB().add_sudo(chat_id, user_id)
             if status == "add"
-            else SudoDB().del_sudo(chat_id, user_id)
+            else await SudoDB().del_sudo(chat_id, user_id)
         )
         return await Bot().send_message(chat_id, key)
     if isinstance(user, types.MessageEntity) and user.user:
         user_id = user.user.id
         key = (
-            SudoDB().add_sudo(chat_id, user_id)
+            await SudoDB().add_sudo(chat_id, user_id)
             if status == "add"
-            else SudoDB().del_sudo(chat_id, user_id)
+            else await SudoDB().del_sudo(chat_id, user_id)
         )
         return await Bot().send_message(chat_id, key)
     if isinstance(user, int):
         user_id = user
         key = (
-            SudoDB().add_sudo(chat_id, user_id)
+            await SudoDB().add_sudo(chat_id, user_id)
             if status == "add"
-            else SudoDB().del_sudo(chat_id, user_id)
+            else await SudoDB().del_sudo(chat_id, user_id)
         )
         return await Bot().send_message(chat_id, key)
 
