@@ -1,7 +1,7 @@
 from pyrogram import Client, filters, types
 
 from core.player import player
-from database.lang_utils import get_message as gm
+from database.lang_utils import gm
 from functions.decorators import authorized_only
 
 
@@ -19,7 +19,7 @@ async def playlist_(client: Client, message: types.Message):
             if current_stream_type in ["video", "music"]
             else current["link"]
         )
-        text = f"**{gm(chat_id, 'now_streaming')}**:\n» [{current_title}]({current_yt_info}) | `{current_stream_type}`"
+        text = f"**{await gm(chat_id, 'now_streaming')}**:\n» [{current_title}]({current_yt_info}) | `{current_stream_type}`"
         return await message.reply(text, disable_web_page_preview=True)
     if current and queued:
         current_title = current["title"]
@@ -30,8 +30,8 @@ async def playlist_(client: Client, message: types.Message):
             else current["link"]
         )
         text = (
-            f"**{gm(chat_id, 'now_streaming')}**:\n» [{current_title}]({current_yt_info}) | `{current_stream_type}`\n\n"
-            f"**{gm(chat_id, 'playlist')}**\n"
+            f"**{await gm(chat_id, 'now_streaming')}**:\n» [{current_title}]({current_yt_info}) | `{current_stream_type}`\n\n"
+            f"**{await gm(chat_id, 'playlist')}**\n"
         )
         for count, queues in enumerate(queued, start=1):
             queue_title = queues["title"]
@@ -43,7 +43,7 @@ async def playlist_(client: Client, message: types.Message):
             )
             text += f"**#{count}** - [{queue_title}]({queue_yt_info}) | `{queue_stream_type}`\n"
         return await message.reply(text, disable_web_page_preview=True)
-    return await message.reply(gm(chat_id, "no_playlists"))
+    return await message.reply(await gm(chat_id, "no_playlists"))
 
 
 __cmds__ = ["playlist"]
