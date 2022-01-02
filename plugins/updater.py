@@ -6,7 +6,7 @@ from git.exc import InvalidGitRepositoryError
 from pyrogram import Client, filters, types
 
 from configs import config
-from database.lang_utils import get_message as gm
+from database.lang_utils import gm
 
 
 def gen_chlog(repo, diff):
@@ -50,14 +50,14 @@ def updater():
 @Client.on_message(filters.command("update") & filters.user(config.OWNER_ID))
 async def update_repo(_, message: types.Message):
     chat_id = message.chat.id
-    msg = await message.reply(gm(chat_id, "processing_update"))
+    msg = await message.reply(await gm(chat_id, "processing_update"))
     update_avail = updater()
     if update_avail:
-        await msg.edit(gm(chat_id, "success_update"))
+        await msg.edit(await gm(chat_id, "success_update"))
         system("git pull -f && pip3 install -r requirements.txt")
         execle(sys.executable, sys.executable, "main.py", environ)
         return
-    await msg.edit(gm(chat_id, "already_newest"))
+    await msg.edit(await gm(chat_id, "already_newest"))
 
 
 __cmds__ = ["update"]
