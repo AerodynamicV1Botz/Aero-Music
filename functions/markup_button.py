@@ -1,12 +1,12 @@
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from configs import config
-from database.lang_utils import get_message as gm
+from database.lang_utils import gm
 
 
 def music_or_video_keyboard(user_id: int, streaming_status: str):
     keyboard = []
-    number = ["1", "2", "3", "4", "5"]
+    number = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣"]
     for count, j in enumerate(number):
         keyboard.append(
             InlineKeyboardButton(
@@ -30,31 +30,31 @@ def process_button(user_id: int, streaming_status: str):
     return keyboard
 
 
-def start_markup(chat_id: int, bot_username: str):
+async def start_markup(chat_id: int, bot_username: str):
     return InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    gm(chat_id, "add_to_chat"),
+                    await gm(chat_id, "add_to_chat"),
                     url=f"https://t.me/{bot_username}?startgroup=true",
                 )
             ],
             [
-                InlineKeyboardButton(gm(chat_id, "helpbutton"), callback_data="cbhelp"),
+                InlineKeyboardButton(await gm(chat_id, "helpbutton"), callback_data="cbhelp"),
                 InlineKeyboardButton(
-                    gm(chat_id, "maintainer"), url="https://t.me/anonymous_was_bot"
+                    await gm(chat_id, "maintainer"), url=f"https://t.me/{config.OWNER_USERNAME}"
                 ),
             ],
             [
-                InlineKeyboardButton(gm(chat_id, "channel"), url=config.CHANNEL_LINK),
+                InlineKeyboardButton(await gm(chat_id, "channel"), url=config.CHANNEL_LINK),
                 InlineKeyboardButton(
-                    gm(chat_id, "group_support"), url="https://t.me/AnonymousRobotSupport"
+                    await gm(chat_id, "group_support"), url=config.GROUP_LINK
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    gm(chat_id, "source_code"),
-                    url="https://github.com/AnonymousBoy1025/AnonymousVCPlayer",
+                    await gm(chat_id, "source_code"),
+                    url="https://telegram.me/AnonymousSupport",
                 )
             ],
         ]
