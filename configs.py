@@ -10,7 +10,7 @@ class Config:
     API_HASH = getenv("API_HASH", "abcd123")
     BOT_TOKEN = getenv("BOT_TOKEN", "1234:abcd")
     SESSION = getenv("SESSION", "session")
-    OWNER_ID = int(getenv("OWNER_ID", "1356469075"))
+    OWNER_ID = int(getenv("OWNER_ID", "7777777"))
     CHANNEL_LINK = getenv("CHANNEL_LINK", "https://t.me/AnonymousSupport")
     GROUP_LINK = getenv("GROUP_LINK", "https://t.me/AnonymousRobotSupport")
     AUTO_LEAVE = int(getenv("AUTO_LEAVE", "15"))
