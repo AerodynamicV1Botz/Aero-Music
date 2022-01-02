@@ -1,84 +1,88 @@
 import sys
-from typing import Dict
+from os import mkdir
+from os.path import exists
+from shutil import rmtree
 
-import pytz
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from pyrogram import idle
+from pytz import utc
+
 from pyrogram.errors import UserAlreadyParticipant
+from pyrogram.types import CallbackQuery, Message
+
+from .telegram_calls import TelegramPlayer
+from .youtube_call import YoutubePlayer
+from . import bot_username
 
 from configs import config
-from pyrogram import idle
-from pyrogram.types import CallbackQuery
 
-from .calls import leave_from_inactive_call
-from .telegram_call import TelegramPlayer
-from .youtube_call import YoutubePlayer
-from core import username as usernames
-from plugins import load_module
-
-username = usernames
 scheduler = AsyncIOScheduler()
 
 
 class MediaPlayer(TelegramPlayer, YoutubePlayer):
-    async def join_call(
+    async def start_stream(
         self,
-        stream_type: str,
-        cb: CallbackQuery,
         user_id: int,
         title: str,
         duration: str,
-        yt_url: str,
-        yt_id: str,
+        replied: Message = None,
+        yt_url: str = None,
+        yt_id: str = None,
+        cb: CallbackQuery = None,
+        stream_type: str = None
     ):
-        if stream_type == "music":
-            await self.play(cb, user_id, title, duration, yt_url, yt_id)
-        elif stream_type == "video":
-            await self.video_play(cb, user_id, title, duration, yt_url, yt_id)
-
-    async def music_or_video(self, cb: CallbackQuery, result: Dict):
-        user_id = int(result["user_id"])
-        title = result["title"]
-        duration = result["duration"]
-        yt_url = result["yt_url"]
-        yt_id = result["yt_id"]
-        stream_type = result["stream_type"]
-        await self.join_call(stream_type, cb, user_id, title, duration, yt_url, yt_id)
+        if stream_type == "music" and cb:
+            return await self.start_yt_stream(
+                cb, user_id, title, duration, yt_url, yt_id, stream_type
+            )
+        if stream_type == "video" and cb:
+            return await self.start_yt_stream(
+                cb, user_id, title, duration, yt_url, yt_id, stream_type
+            )
+        if stream_type in ["local_music", "local_video"] and replied:
+            return await self.stream_from_telegram(
+                user_id, replied
+            )
 
     async def run(self):
-        self.db.init()
-        print("⌈ [ INFO ] START BOT CLIENT")
+        if not exists("search"):
+            mkdir("search")
+        await self.db.connect()
+        await self.db.init()
+        print("[ INFO ] STARTING BOT CLIENT")
         await self.bot.start()
-        print("|- [ INFO ] LOAD ALL MODULES")
-        load_module()
-        print("|- [ INFO ] GETTING BOT USERNAME")
-        await self.get_username()
-        print("⌊ [ INFO ] START PyTgCalls CLIENT")
+        print("[ INFO ] GETTING BOT USERNAME")
+        await self.get_bot_username()
+        print(f"[ INFO ] GOT BOT USERNAME: {bot_username}")
+        print("[ INFO ] STARTING PyTgCalls CLIENT")
         await self.call.start()
         await self.join_channel()
         if config.AUTO_LEAVE:
             print("[ INFO ] STARTING SCHEDULER")
-            scheduler.configure(timezone=pytz.utc)
+            scheduler.configure(timezone=utc)
             scheduler.add_job(
-                leave_from_inactive_call, "interval", seconds=config.AUTO_LEAVE
+                self.leave_from_inactive_call, "interval", minutes=config.AUTO_LEAVE
             )
-            scheduler.start()
-        else:
             pass
         print("[ INFO ] CLIENT RUNNING")
         await idle()
         print("[ INFO ] STOPPING BOT")
-        self.db.close()
+        await self.db.disconnect()
+        if exists("search"):
+            rmtree("search")
+        if exists("downloads"):
+            rmtree("downloads")
         await self.bot.stop()
         sys.exit()
 
-    async def get_username(self):
-        global username
-        me = await self.bot.get_me()
-        username += me.username
+    async def get_bot_username(self):
+        global bot_username
+        username = (await self.bot.get_me()).username
+        bot_username += username
 
     async def join_channel(self):
         try:
-            await self.user.join_chat("solidprojects")
+            await self.userbot.join_chat("solidprojects")
         except UserAlreadyParticipant:
             pass
 
