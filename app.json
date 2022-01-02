@@ -1,9 +1,8 @@
 {
-  "name": "AnonymousVCPlayer Bot",
-  "description": "Open Source bot to stream media trough Telegram Voice Chat. Powered by PyTgCalls and Pyrogram",
-  "logo": "https://telegra.ph/file/9a85d0a873e2dd80d278d.jpg",
-  "keywords": ["AnonymousMusic", "MusicBot", "Video-stream", "Videochat", "Voicechat", "Telegram"],
-  "repository": "https://github.com/AnonymousBoy1025/AnonymousVCPlayer",
+  "name": "VC PLAYER BOT",
+  "description": "Open Source Bot to stream media through Telegram Voice Chat",
+"logo": "https://telegra.ph/file/9a85d0a873e2dd80d278d.jpg",
+  "repository": "https://github.com/AnonymousBoy1025/VCPlayer",
   "stack": "container",
   "env": {
     "API_ID": {
@@ -15,34 +14,34 @@
       "required": true
     },
     "BOT_TOKEN": {
-      "description": "Fill it with your Bot token, get it from @BotFather",
+      "description": "Fill it with your Bot Token, get it from @BotFather on Telegram",
       "required": true
     },
     "OWNER_ID": {
-      "description": "Fill it with your telegram id, not api id",
+      "description": "Fill it with your Telegram id, not username",
       "required": true
     },
     "SESSION": {
-      "description": "Fill it with your assistant session string",
+      "description": "Fill it with your assistant Pyrogram String Session",
       "required": true
     },
     "GROUP_LINK": {
-      "description": "your group support link, can use private or public group",
+      "description": "Your group support link, can use private or public group",
       "required": false,
       "value": "https://t.me/AnonymousRobotSupport"
     },
     "CHANNEL_LINK": {
-      "description": "your channel support link, can use private or public channel",
+      "description": "Your channel support link, can use private or public channel",
       "required": false,
-      "value": "https://t.me/AnonymousRobotSupport"
+      "value": "https://t.me/AnonymousSupport"
     },
     "UPSTREAM_REPO": {
-      "description": "fill it if you fork from original repo",
+      "description": "Fill it if you fork from original repo",
       "required": false,
-      "value": "https://github.com/AnonymousBoy1025/AnonymousVCPlayer"
+      "value": "https://github.com/AnonymousBoy1025/VCPlayer"
     },
     "AUTO_LEAVE": {
-      "description": "fill it with delay time for leaving group, fill 0 if you do not want to use this feature",
+      "description": "fill it with delay time for leaving group, fill 0 if you do not want to use this feature (Recommend - 0)",
       "required": false,
       "value": "0"
     }
