@@ -1,4 +1,0 @@
-*.env
-*.session*
-.deepsource.toml
-venv/*
