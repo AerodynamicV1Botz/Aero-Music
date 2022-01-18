@@ -1,0 +1,40 @@
+{
+  "name": "Fallen Music",
+  "description": "A SuperFast VC Player bot to play songs in Telegram Voice Chat. Powered by PyTgCalls.",
+  "keywords": ["music", "voicechat", "telegram"],
+  "repository": "https://github.com/AnonymousBoy1025/FallenMusic",
+  "stack": "container",
+  "env": {
+    "SESSION_NAME": {
+      "description": "Pyrogram String Session of assistant account",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Get this value from @BotFather on TG",
+      "required": true
+    },
+    "BOT_NAME": {
+      "description": "A name for your MusicPlayer Bot",
+      "required": true,
+      "value": ""
+    },
+    "API_ID": {
+      "description": "Get this value from my.telegram.org/apps",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Get this value from from my.telegram.org/apps",
+      "required": true
+    },
+    "SUDO_USERS": {
+      "description": "User IDs of the users who will counted as admin everywhere (if more than one separate them by space).",
+      "required": true,
+      "value": "1356469075"
+    },
+    "DURATION_LIMIT": {
+      "description": "Max audio duration limit for downloads (minutes).",
+      "required": true,
+      "value": "15"
+    }
+  }
+}
