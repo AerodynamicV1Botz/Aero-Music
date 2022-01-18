@@ -1,7 +1,7 @@
 <p align="center">
     <br><b>😫 𝗙𝗮𝗹𝗹𝗲𝗻 𝗠𝘂𝘀𝗶𝗰 😫</b><br>
 </p>
-<p align="center"><a href="https://t.me/DevilsHeavenMF"><img src="https://telegra.ph/file/f6f020ef5aeeb079b15b9.jpg"></a></p>
+<p align="center"><a href="https://t.me/DevilsHeavenMF"><img src="https://telegra.ph/file/93b08120e36d096cd21ca.jpg"></a></p>
 <p align="center">
     <br><b>Fallen Music is a Telegram Bot project that allows you to play music on Telegram through Telegram Voice Chat Feature</b><br>
 </p>
@@ -78,7 +78,6 @@ python3 main.py # Run the bot
 ### Special Credits 💖
 - [𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦](https://github.com/AnonymousBoy1025): Dev
 - [Fallen Music Bot](https://telegram.me/fallen_music_bot) Test Music Bot
-- [RojSerBest](https://github.com/rojserbest) CallsMusic Developer
 
 ### Support & Updates 🎑
 <a href="https://telegram.me/DevilsHeavenMF"><img src="https://img.shields.io/badge/Join-Group%20Support-blue.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://telegram.me/DevilsHeavenMF"><img src="https://img.shields.io/badge/Join-Updates%20Channel-blue.svg?style=for-the-badge&logo=Telegram"></a>
