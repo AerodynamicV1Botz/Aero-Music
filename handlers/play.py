@@ -98,7 +98,7 @@ async def play(_, message: Message):
     global que
     global useer
 
-    lel = await message.reply("» sᴇᴀʀᴄʜɪɴɢ... ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ʙᴀʙʏ🔎")
+    lel = await message.reply("» ᴘʀᴏᴄᴇssɪɴɢ​... ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ʙᴀʙʏ🔎")
 
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -161,11 +161,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
              [
                 [
-                    InlineKeyboardButton(
-                            text="😘ᴄʀᴇᴀᴛᴏʀ",
-                            url=f"https://t.me/anonymous_was_bot"),
                         InlineKeyboardButton(
-                            text="💔ɢʀᴏᴜᴘ",
+                            text="💕 sᴜᴘᴘᴏʀᴛ 💕",
                             url=f"https://t.me/DevilsHeavenMF")
                    
                 ]
@@ -204,10 +201,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="😘ᴄʀᴇᴀᴛᴏʀ",
-                            url=f"https://t.me/anonymous_was_bot"),
-                        InlineKeyboardButton(
-                            text="💔ɢʀᴏᴜᴘ",
+                            text="💕 sᴜᴘᴘᴏʀᴛ 💕",
                             url=f"https://t.me/DevilsHeavenMF")
                    
                 ]
@@ -222,11 +216,8 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(
-                            text="😘ᴄʀᴇᴀᴛᴏʀ",
-                            url=f"https://t.me/anonymous_was_bot"),
                         InlineKeyboardButton(
-                            text="💔ɢʀᴏᴜᴘ",
+                            text="💕 sᴜᴘᴘᴏʀᴛ 💕",
                             url=f"https://t.me/DevilsHeavenMF")
                    
                 ]
@@ -279,11 +270,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(
-                            text="😘ᴄʀᴇᴀᴛᴏʀ",
-                            url=f"https://t.me/anonymous_was_bot"),
                         InlineKeyboardButton(
-                            text="💔ɢʀᴏᴜᴘ",
+                            text="💕 sᴜᴘᴘᴏʀᴛ 💕",
                             url=f"https://t.me/DevilsHeavenMF")
                    
                 ]
