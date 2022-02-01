@@ -11,7 +11,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 async def start_(client: Client, message: Message):
     await message.reply_sticker("CAACAgQAAxkBAAEDsTZh4xBVu96tWo0G0CIbn_meSGs6LwACWxcAAqbxcR4yeTJRtPe4UCME")
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/f6f020ef5aeeb079b15b9.jpg",
+        photo=f"https://telegra.ph/file/d5b04ae52dc6d7703c8e8.jpg",
         caption=f"""**━━━━━━━━━━━━━━━━━━━━━━
 🖤 ʜᴇʏ, ɪ ᴀᴍ sᴜᴘᴇʀ ғᴀsᴛ ᴠᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs...
 ᴀʟʟ ᴏꜰ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ : /
@@ -45,13 +45,13 @@ async def start_(client: Client, message: Message):
 
 async def help(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/93b08120e36d096cd21ca.jpg",
+        photo=f"https://telegra.ph/file/d5b04ae52dc6d7703c8e8.jpg",
         caption=f"""ɪ ᴀᴍ ᴀʟɪᴠᴇ ʙᴀʙʏ !🖤""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "💕sᴜᴘᴘᴏʀᴛ💕", url=f"https://t.me/DevilsHeavenMF")
+                        "🖤 𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦 🖤", url=f"https://t.me/anonymous_was_bot")
                 ]
             ]
         ),
