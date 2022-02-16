@@ -124,18 +124,18 @@ async def play(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "» ʜᴇʏ ʙᴀʙʏ, ɪ'ᴍ ʜᴇʀᴇ, ᴛʜᴀɴᴋs ꜰᴏʀ ɪɴᴠɪᴛɪɴɢ ᴍᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ ʙᴀʙʏ")
+                        message.chat.id, "» ᴀssɪsᴛᴀɴᴛ sᴜᴄᴄᴇssꜰᴜʟʏ ᴊᴏɪɴᴇᴅ ᴛʜᴇ ᴄʜᴀᴛ ʙᴀʙʏ, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴘʟᴀʏ sᴏɴɢs​.")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"<b>» ᴀssɪsᴛᴀɴᴛ ɪs ɴᴏᴛ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ʙᴀʙʏ, sᴇɴᴅ /play ғɪʀsᴛ ᴛɪᴍᴇ ᴛᴏ ᴏʀᴅᴇʀ ᴛʜᴇ ᴀssɪsᴛᴀɴᴛ ᴛᴏ ᴊ​ᴏɪɴ ʏᴏᴜʀ ᴄʜᴀᴛ.")
+                        f"<b>» ᴀssɪsᴛᴀɴᴛ ɪs ɴᴏᴛ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ʙᴀʙʏ, sᴇɴᴅ /join ғɪʀsᴛ ᴛɪᴍᴇ ᴛᴏ ᴏʀᴅᴇʀ ᴛʜᴇ ᴀssɪsᴛᴀɴᴛ ᴛᴏ ᴊ​ᴏɪɴ ʏᴏᴜʀ ᴄʜᴀᴛ.")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"<i>» ᴜsᴇʀʙᴏᴛ ɢᴏᴛ ꜰʟᴏᴏᴅᴡᴀɪᴛ ʙᴀʙʏ, ɢᴏɪɴɢ ᴛᴏ sʟᴇᴇᴘ ꜰᴏʀ sᴇᴄᴏɴᴅs, ᴍᴀᴋᴇ sᴜʀᴇ ᴜsᴇʀʙᴏᴛ ɪs ɴᴏᴛ ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ʙᴀʙʏ.</i>")
+            f"<i>» ᴜsᴇʀʙᴏᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ʙᴀʙʏ.</i>")
         return
     
     audio = (
@@ -294,7 +294,8 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)
         await message.reply_photo(
             photo="final.png",
-            caption="» ᴛʀᴀᴄᴋ ǫᴜᴇᴜᴇᴅ ᴀᴛ {} ʙᴀʙʏ".format(position),
+            caption="» ᴛʀᴀᴄᴋ ǫᴜᴇᴜᴇᴅ ᴀᴛ {} ʙᴀʙʏ\n\n» ɴᴀᴍᴇ​ :{}\n\n🕕 ᴅᴜʀᴀᴛɪᴏɴ : `{}` ᴍɪɴᴜᴛᴇs\n💕 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : {}".format(
+        position, title, duration, message.from_user.mention ),
             reply_markup=keyboard,
         )
     else:
