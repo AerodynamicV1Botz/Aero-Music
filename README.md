@@ -80,7 +80,7 @@ python3 main.py # Run the bot
 
 ### Special Credits 💖
 - [𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦](https://github.com/AnonymousBoy1025): Developer
-- [Fallen Music Bot](https://telegram.me/fallen_music_bot) Test Bot
+- [Fallen Music Bot](https://telegram.me/fallen_music_bot): Test Bot
 
 [![ForTheBadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
