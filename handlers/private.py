@@ -25,17 +25,17 @@ async def start_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "😫ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜ ɢᴇʏ​😫", url="https://t.me/fallen_music_bot?startgroup=true")
+                        "✗ ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜ ɢᴇʏ​ ✗", url="https://t.me/fallen_music_bot?startgroup=true")
                   ],[
                     InlineKeyboardButton(
-                        "😘ᴄʀᴇᴀᴛᴏʀ😘", url="https://t.me/anonymous_was_bot"
+                        "✗ ᴄʀᴇᴀᴛᴏʀ ✗", url="https://t.me/anonymous_was_bot"
                     ),
                     InlineKeyboardButton(
-                        "💔sᴜᴘᴘᴏʀᴛ💔", url="https://t.me/DevilsHeavenMF"
+                        "✗ sᴜᴘᴘᴏʀᴛ ✗", url="https://t.me/DevilsHeavenMF"
                     )
                 ],[ 
                     InlineKeyboardButton(
-                        "🤔sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ​🤔", url="https://t.me/DevilsHeavenMF"
+                        "✗ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ​ ✗", url="https://t.me/DevilsHeavenMF"
                     )]
             ]
        ),
