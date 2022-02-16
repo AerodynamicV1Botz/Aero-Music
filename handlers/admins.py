@@ -66,4 +66,4 @@ async def skip(_, message: Message):
                     ),
                 ),
             )
-    await message.reply_text("» ᴛʀᴀᴄᴋ sᴋɪᴘᴘᴇᴅ ʙᴀʙʏ🤔")
+    await message.reply_text("» ᴛʀᴀᴄᴋ sᴋɪᴘᴘᴇᴅ ʙʏ {} ʙᴀʙʏ🤔".format( message.from_user.mention ), )
