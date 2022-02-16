@@ -6,14 +6,13 @@
 > Fallen Music is a Telegram Bot project that allows you to play music on Telegram through Telegram Voice Chat Feature</b><br>
 
 <p align="center">
-    <a href="https://github.com/AnonymousBoy1025/FallenMusic/stargazers"><img src="https://img.shields.io/github/stars/AnonymousBoy1025/FallenMusic?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
-</p>
-<p align="center">
-    <a href="https://github.com/AnonymousBoy1025/FallenMusic/graphs/commit-activity" alt="Maintenance"> <img src="https://img.shields.io/badge/Maintained%3F-yes-red.svg?style=flat-square" /></a>
-</p>
-<p align="center">
-    <a href="https://github.com/AnonymousBoy1025/FallenMusic/network/members"> <img src="https://img.shields.io/github/forks/AnonymousBoy1025/FallenMusic?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <img src="https://img.shields.io/github/stars/AnonymousBoy1025/FallenMusic?style=for-the-badge" alt="Stars">
+    <img src="https://img.shields.io/github/forks/AnonymousBoy1025/FallenMusic?style=for-the-badge" alt="Forks">
+    <img src="https://img.shields.io/github/watchers/AnonymousBoy1025/FallenMusic?style=for-the-badge" alt="Watchers">
+    <img src="https://img.shields.io/github/license/AnonymousBoy1025/FallenMusic?style=for-the-badge" alt="LICENSE">
+    <img src="https://img.shields.io/github/commit-activity/w/AnonymousBoy1025/FallenMusic?style=for-the-badge" alt="Commit Activity">
     <a href="https://github.com/AnonymousBoy1025/FallenMusic/commits/AnonymousBoy1025"> <img src="https://img.shields.io/github/last-commit/AnonymousBoy1025/FallenMusic?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <img src="https://img.shields.io/github/contributors/AnonymousBoy1025/FallenMusic?style=for-the-badge" alt="Contributors">
     <a href="https://github.com/AnonymousBoy1025/FallenMusic/issues"> <img src="https://img.shields.io/github/issues/AnonymousBoy1025/FallenMusic?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://github.com/AnonymousBoy1025/FallenMusic"> <img src="https://img.shields.io/github/repo-size/AnonymousBoy1025/FallenMusic?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?color=yellow&label=pyrogram&logo=python&logoColor=green&style=for-the-badge" /></a>
