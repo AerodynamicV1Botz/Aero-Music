@@ -84,7 +84,7 @@ python3 main.py # Run the bot
 
 [![ForTheBadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-### Support & Updates 🎑
+### Support & Developer 🎑
 <a href="https://telegram.me/DevilsHeavenMF"><img src="https://img.shields.io/badge/Join-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://telegram.me/anonymous_was_bot"><img src="https://img.shields.io/badge/%20Developer-blue.svg?style=for-the-badge&logo=Telegram"></a>
 
 ------------------------------------------------
