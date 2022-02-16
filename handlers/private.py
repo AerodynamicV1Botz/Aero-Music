@@ -6,6 +6,11 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 
+      bot = await Bot().get_me()
+      bot_username = bot.username
+      bot_name = bot.first_name
+      mention = message.from_user.mention
+      user_id = message.from_user.id
 
 @Client.on_message(command("start", "fuck") & filters.private & ~filters.group & ~filters.edited)
 async def start_(client: Client, message: Message):
@@ -13,14 +18,17 @@ async def start_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/053f99956ccee8416b8f7.jpg",
         caption=f"""**━━━━━━━━━━━━━━━━━━
-🖤 ʜᴇʏ, ɪ ᴀᴍ sᴜᴘᴇʀ ғᴀsᴛ ᴠᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs...
+🖤 ʜᴇʏ {},
+      ɪ ᴀᴍ **[{}](t.me/{})**, ᴀ sᴜᴘᴇʀ ғᴀsᴛ ᴠᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs...
 ᴀʟʟ ᴏꜰ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ : /
 ┏━━━━━━━━━━━━━━┓
 ┣★ᴄʀᴇᴀᴛᴏʀ: [𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦](t.me/anonymous_was_bot)
 ┗━━━━━━━━━━━━━━┛
 
 💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇsᴛɪᴏɴs ᴛʜᴇɴ ᴅᴍ ᴛᴏ ᴍʏ [ᴏᴡɴᴇʀ](t.me/anonymous_was_bot) ʙᴀʙʏ...
-━━━━━━━━━━━━━━━━━━**""",
+━━━━━━━━━━━━━━━━━━**""".format(
+      message.from_user.mention, bot_name, bot_username
+            ),
     reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -51,7 +59,7 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🖤 𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦 🖤", url=f"https://t.me/anonymous_was_bot")
+                        "✗ 𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦 ✗", url=f"https://t.me/anonymous_was_bot")
                 ]
             ]
         ),
