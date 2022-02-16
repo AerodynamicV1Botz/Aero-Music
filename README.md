@@ -2,9 +2,9 @@
     <br><b>😫 𝗙𝗮𝗹𝗹𝗲𝗻 𝗠𝘂𝘀𝗶𝗰 😫</b><br>
 </p>
 <p align="center"><a href="https://t.me/DevilsHeavenMF"><img src="https://telegra.ph/file/93b08120e36d096cd21ca.jpg"></a></p>
-<p align="center">
-    <br><b>Fallen Music is a Telegram Bot project that allows you to play music on Telegram through Telegram Voice Chat Feature</b><br>
-</p>
+
+> Fallen Music is a Telegram Bot project that allows you to play music on Telegram through Telegram Voice Chat Feature</b><br>
+
 <p align="center">
     <a href="https://github.com/AnonymousBoy1025/FallenMusic/stargazers"><img src="https://img.shields.io/github/stars/AnonymousBoy1025/FallenMusic?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
 </p>
