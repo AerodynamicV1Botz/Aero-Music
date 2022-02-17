@@ -41,7 +41,7 @@ async def start_(client: Client, message: Message):
        ),
     )
 
-@Client.on_message(command(["ping", "repo", "anon"]) & filters.group & ~filters.edited & ~filters.private)
+@Client.on_message(command(["ping", "repo", "anon", "alive"]) & filters.group & ~filters.edited & ~filters.private)
 
 async def help(client: Client, message: Message):
     await message.reply_sticker("CAACAgUAAx0CZIiVngACSppiDZZGd6IPFA0TnEuOM3EqFbRxVQACCQMAArU72FSskU3O5FiqcyME")
