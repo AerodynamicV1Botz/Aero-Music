@@ -309,13 +309,5 @@ async def play(_, message: Message):
                 stream_type=StreamType().local_stream,
             )
 
-        await message.reply_photo(
-            photo="final.png",
-            reply_markup=keyboard,
-            caption="» ɴᴀᴍᴇ​ : {}\n\n🕕 ᴅᴜʀᴀᴛɪᴏɴ : `{}` ᴍɪɴᴜᴛᴇs\n💕 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : {}\n💔 ᴘʟᴀʏɪɴɢ ɪɴ​ : `{}`\n".format(
-        title, duration, message.from_user.mention(), message.chat.title
-        ), )
-
-    os.remove("final.png")
     return await lel.delete()
     
