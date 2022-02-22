@@ -293,7 +293,7 @@ async def play(_, message: Message):
     if int(chat_id) in ACTV_CALLS:
         position = await queues.put(chat_id, file=file_path)
         await message.reply_photo(
-            photo="final.png",
+            photo="https://telegra.ph/file/89cbc8b8760b6abff430f.jpg",
             caption="» ᴛʀᴀᴄᴋ ǫᴜᴇᴜᴇᴅ ᴀᴛ {} ʙᴀʙʏ\n\n» ɴᴀᴍᴇ​ :{}\n\n🕕 ᴅᴜʀᴀᴛɪᴏɴ : `{}` ᴍɪɴᴜᴛᴇs\n💕 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : {}".format(
         position, title, duration, message.from_user.mention ),
             reply_markup=keyboard,
@@ -310,7 +310,7 @@ async def play(_, message: Message):
             )
 
         await message.reply_photo(
-            photo="final.png",
+            photo="https://telegra.ph/file/89cbc8b8760b6abff430f.jpg",
             reply_markup=keyboard,
             caption="» ɴᴀᴍᴇ​ : {}\n\n🕕 ᴅᴜʀᴀᴛɪᴏɴ : `{}` ᴍɪɴᴜᴛᴇs\n💕 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : {}\n💔 ᴘʟᴀʏɪɴɢ ɪɴ​ : `{}`\n".format(
         title, duration, message.from_user.mention(), message.chat.title
