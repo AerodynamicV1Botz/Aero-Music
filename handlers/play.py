@@ -170,7 +170,6 @@ async def play(_, message: Message):
         )
 
         requested_by = message.from_user.first_name
-        await generate_cover(requested_by, title, views, duration, thumbnail)
         file_path = await converter.convert(
             (await message.reply_to_message.download(file_name))
             if not path.isfile(path.join("downloads", file_name))
@@ -230,7 +229,6 @@ async def play(_, message: Message):
             )
             return
         requested_by = message.from_user.first_name
-        await generate_cover(requested_by, title, views, duration, thumbnail)
         file_path = await converter.convert(youtube.download(url))
     else:
         if len(message.command) < 2:
@@ -284,7 +282,6 @@ async def play(_, message: Message):
             )
             return
         requested_by = message.from_user.first_name
-        await generate_cover(requested_by, title, views, duration, thumbnail)
         file_path = await converter.convert(youtube.download(url))
     ACTV_CALLS = []
     chat_id = message.chat.id
