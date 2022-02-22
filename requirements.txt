@@ -14,3 +14,4 @@ ffmpeg-python
 ffmpeg
 Pillow
 ujson
+psutil
