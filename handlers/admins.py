@@ -13,7 +13,7 @@ from pytgcalls.types.input_stream import InputStream
 
 ACTV_CALLS = []
 
-@Client.on_message(command(["pause"]) & other_filters)
+@Client.on_message(command(["pause", "rukja"]) & other_filters)
 @errors
 @authorized_users_only
 async def pause(_, message: Message):
@@ -29,7 +29,7 @@ async def resume(_, message: Message):
     await message.reply_text("» ᴛʀᴀᴄᴋ ʀᴇsᴜᴍᴇᴅ ʙʏ {} ʙᴀʙʏ🤗".format( message.from_user.mention ), )
 
 
-@Client.on_message(command(["end"]) & other_filters)
+@Client.on_message(command(["end", " stop"]) & other_filters)
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
@@ -42,7 +42,7 @@ async def stop(_, message: Message):
     await message.reply_text("» sᴛʀᴇᴀᴍ ᴇɴᴅᴇᴅ ʙʏ {} ʙᴀʙʏ🥺".format(
       message.from_user.mention ), )
 
-@Client.on_message(command(["skip"]) & other_filters)
+@Client.on_message(command(["skip", "next"]) & other_filters)
 @errors
 @authorized_users_only
 async def skip(_, message: Message):
