@@ -20,7 +20,7 @@ async def clear_downloads(_, message: Message):
         await message.reply_text("**ɴᴏ ꜰɪʟᴇs ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴏɴ ᴅᴀᴛᴀʙᴀsᴇ ʙᴀʙʏ​**")
 
         
-@Client.on_message(command(["rmw", "saaf"]) & ~filters.edited)
+@Client.on_message(command(["rmw", "clean"]) & ~filters.edited)
 @errors
 @sudo_users_only
 async def clear_raw(_, message: Message):
@@ -33,7 +33,7 @@ async def clear_raw(_, message: Message):
         await message.reply_text("**ɴᴏ ʀᴀᴡ ꜰɪʟᴇs ꜰᴏᴜɴᴅ​**")
 
 
-@Client.on_message(command(["psaaf"]) & ~filters.edited)
+@Client.on_message(command(["clear", " rmp"]) & ~filters.edited)
 @errors
 @sudo_users_only
 async def cleanup(_, message: Message):
