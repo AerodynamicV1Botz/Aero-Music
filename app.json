@@ -16,7 +16,12 @@
     "BOT_NAME": {
       "description": "A name for your MusicPlayer Bot",
       "required": true,
-      "value": ""
+      "value": "⛧🖤 𝗙𝝙𝗟𝗟𝝣𝗡 𝗠𝗨𝗦𝗜𝗖 🖤⛧"
+    },
+    "PMPERMIT": {
+      "description": "This will enable the assistant to send message when someone PM the assistant.[ENABLE | DISABLE]",
+      "required": false,
+      " value": "ENABLE"
     },
     "API_ID": {
       "description": "Get this value from my.telegram.org/apps",
@@ -26,6 +31,11 @@
       "description": "Get this value from from my.telegram.org/apps",
       "required": true
     },
+    " COMMAND_PREFIXES": {
+      "description": "Prefix which will be used to play music.",
+      " required": false
+      "value": "/ !"
+    },
     "SUDO_USERS": {
       "description": "User IDs of the users who will counted as admin everywhere (if more than one separate them by space).",
       "required": true,
@@ -34,7 +44,7 @@
     "DURATION_LIMIT": {
       "description": "Max audio duration limit for downloads (minutes).",
       "required": true,
-      "value": "15"
+      "value": "30"
     }
   }
 }
