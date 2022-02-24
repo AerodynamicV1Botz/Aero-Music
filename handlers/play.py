@@ -18,7 +18,6 @@ from helpers.errors import DurationLimitError
 from helpers.gets import get_url, get_file_name
 import aiofiles
 import ffmpeg
-from PIL import Image, ImageFont, ImageDraw
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import InputAudioStream
 from pytgcalls.types.input_stream import InputStream
@@ -27,6 +26,18 @@ from pytgcalls.types.input_stream import InputStream
 def transcode(filename):
     ffmpeg.input(filename).output("input.raw", format='s16le', acodec='pcm_s16le', ac=2, ar='48k').overwrite_output().run() 
     os.remove(filename)
+
+# Inline button
+keyboard = InlineKeyboardMarkup(
+             [
+                [
+                        InlineKeyboardButton(
+                            text="💕 sᴜᴘᴘᴏʀᴛ 💕",
+                            url=f"https://t.me/DevilsHeavenMF")
+                   
+                ]
+            ]
+        )
 
 # Convert seconds to mm:ss
 def convert_seconds(seconds):
@@ -54,7 +65,9 @@ async def play(_, message: Message):
     global que
     global useer
 
-    lel = await message.reply("» ᴘʀᴏᴄᴇssɪɴɢ​... ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ʙᴀʙʏ🔎")
+    fallen = await message.reply("» ᴘʀᴏᴄᴇssɪɴɢ​... ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ʙᴀʙʏ🔎")
+
+    chumtiya = message.from_user.mention
 
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -73,7 +86,7 @@ async def play(_, message: Message):
                 try:
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
-                    await lel.edit(
+                    await fallen.edit(
                         "<b>» ꜰɪʀsᴛʟʏ ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ʙᴀʙʏ</b>")
                     return
 
@@ -85,12 +98,12 @@ async def play(_, message: Message):
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
-                    await lel.edit(
+                    await fallen.edit(
                         f"<b>» ᴀssɪsᴛᴀɴᴛ ɪs ɴᴏᴛ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ʙᴀʙʏ, sᴇɴᴅ /join ғɪʀsᴛ ᴛɪᴍᴇ ᴛᴏ ᴏʀᴅᴇʀ ᴛʜᴇ ᴀssɪsᴛᴀɴᴛ ᴛᴏ ᴊ​ᴏɪɴ ʏᴏᴜʀ ᴄʜᴀᴛ.")
     try:
         await USER.get_chat(chid)
     except:
-        await lel.edit(
+        await fallen.edit(
             f"<i>» ᴜsᴇʀʙᴏᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ʙᴀʙʏ.</i>")
         return
     
@@ -112,18 +125,6 @@ async def play(_, message: Message):
         duration = round(audio.duration / 60)
         views = "Locally added"
 
-        keyboard = InlineKeyboardMarkup(
-             [
-                [
-                        InlineKeyboardButton(
-                            text="💕 sᴜᴘᴘᴏʀᴛ 💕",
-                            url=f"https://t.me/DevilsHeavenMF")
-                   
-                ]
-            ]
-        )
-
-        requested_by = message.from_user.first_name
         file_path = await converter.convert(
             (await message.reply_to_message.download(file_name))
             if not path.isfile(path.join("downloads", file_name))
@@ -150,45 +151,23 @@ async def play(_, message: Message):
                 dur += int(dur_arr[i]) * secmul
                 secmul *= 60
 
-            keyboard = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                            text="💕 sᴜᴘᴘᴏʀᴛ 💕",
-                            url=f"https://t.me/DevilsHeavenMF")
-                   
-                ]
-            ]
-        )
-
         except Exception as e:
             title = "NaN"
             duration = "NaN"
             views = "NaN"
-            keyboard = InlineKeyboardMarkup(
-            [
-                [
-                        InlineKeyboardButton(
-                            text="💕 sᴜᴘᴘᴏʀᴛ 💕",
-                            url=f"https://t.me/DevilsHeavenMF")
-                   
-                ]
-            ]
-        )
 
         if (dur / 60) > DURATION_LIMIT:
-            await lel.edit(
+            await fallen.edit(
                 f"» sᴏʀʀʏ ʙᴀʙʏ, ᴛʀᴀᴄᴋ ʟᴏɴɢᴇʀ ᴛʜᴀɴ  {DURATION_LIMIT} ᴍɪɴᴜᴛᴇs ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ"
             )
             return
-        requested_by = message.from_user.first_name
         file_path = await converter.convert(youtube.download(url))
     else:
         if len(message.command) < 2:
-            return await lel.edit(
+            return await fallen.edit(
                 "» ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ sᴇᴀʀᴄʜ ʙᴀʙʏ🤦🏻‍♂️"
             )
-        await lel.edit("🔎")
+        await fallen.edit("🔎")
         query = message.text.split(None, 1)[1]
         # print(query)
         try:
@@ -212,29 +191,17 @@ async def play(_, message: Message):
                 secmul *= 60
 
         except Exception as e:
-            await lel.edit(
+            await fallen.edit(
                 "» ɴᴏᴛ ғᴏᴜɴᴅ, ᴛʀʏ sᴇᴀʀᴄʜɪɴɢ ᴡɪᴛʜ ᴛʜᴇ sᴏɴɢ ɴᴀᴍᴇ ʙᴀʙʏ"
             )
             print(str(e))
             return
 
-        keyboard = InlineKeyboardMarkup(
-            [
-                [
-                        InlineKeyboardButton(
-                            text="💕 sᴜᴘᴘᴏʀᴛ 💕",
-                            url=f"https://t.me/DevilsHeavenMF")
-                   
-                ]
-            ]
-        )
-
         if (dur / 60) > DURATION_LIMIT:
-            await lel.edit(
+            await fallen.edit(
                 f"» sᴏʀʀʏ ʙᴀʙʏ, ᴛʀᴀᴄᴋ ʟᴏɴɢᴇʀ ᴛʜᴀɴ  {DURATION_LIMIT} ᴍɪɴᴜᴛᴇs ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ"
             )
             return
-        requested_by = message.from_user.first_name
         file_path = await converter.convert(youtube.download(url))
     ACTV_CALLS = []
     chat_id = message.chat.id
@@ -242,10 +209,9 @@ async def play(_, message: Message):
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) in ACTV_CALLS:
         position = await queues.put(chat_id, file=file_path)
-        await message.reply_photo(
-            photo="https://telegra.ph/file/89cbc8b8760b6abff430f.jpg",
-            caption="» ᴛʀᴀᴄᴋ ǫᴜᴇᴜᴇᴅ ᴀᴛ {} ʙᴀʙʏ\n\n» ɴᴀᴍᴇ​ :{}\n\n🕕 ᴅᴜʀᴀᴛɪᴏɴ : `{}` ᴍɪɴᴜᴛᴇs\n💕 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : {}".format(
-        position, title, duration, message.from_user.mention ),
+        await message.reply_text(
+            text="» ᴛʀᴀᴄᴋ ǫᴜᴇᴜᴇᴅ ᴀᴛ {} ʙᴀʙʏ\n\n» ɴᴀᴍᴇ​ :{}\n\n🕕 ᴅᴜʀᴀᴛɪᴏɴ : `{}` ᴍɪɴᴜᴛᴇs\n💕 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : {}".format(
+        position, title, duration, chumtiya ),
             reply_markup=keyboard,
         )
     else:
@@ -259,13 +225,12 @@ async def play(_, message: Message):
                 stream_type=StreamType().local_stream,
             )
 
-        await message.reply_photo(
-            photo="https://telegra.ph/file/89cbc8b8760b6abff430f.jpg",
+        await message.reply_text(
+            text="» ɴᴀᴍᴇ​ : {}\n\n🕕 ᴅᴜʀᴀᴛɪᴏɴ : `{}` ᴍɪɴᴜᴛᴇs\n💕 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : {}\n💔 ᴘʟᴀʏɪɴɢ ɪɴ​ : `{}`\n\n{}".format(
+        title, duration, chumtiya, message.chat.title, durl
+        ),
             reply_markup=keyboard,
-            caption="» ɴᴀᴍᴇ​ : {}\n\n🕕 ᴅᴜʀᴀᴛɪᴏɴ : `{}` ᴍɪɴᴜᴛᴇs\n💕 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : {}\n💔 ᴘʟᴀʏɪɴɢ ɪɴ​ : `{}`\n".format(
-        title, duration, message.from_user.mention(), message.chat.title
-        ), )
+             )
 
-    os.remove("final.png")
-    return await lel.delete()
+    return await fallen.delete()
     
