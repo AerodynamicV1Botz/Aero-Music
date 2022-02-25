@@ -226,7 +226,7 @@ async def play(_, message: Message):
             )
 
         await message.reply_text(
-            text="**» ɴᴏᴡ ᴘʟᴀʏɪɴɢ «**\n📌 **ᴛɪᴛʟᴇ​:** [{}]({})\n\n🕕 **ᴅᴜʀᴀᴛɪᴏɴ:** `{}` ᴍɪɴᴜᴛᴇs\n💕 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​:** {}\n💔 **ᴘʟᴀʏɪɴɢ ɪɴ​:** `{}`\n🎥 **sᴛʀᴇᴀᴍ ᴛʏᴘᴇ:** ʏᴏᴜᴛᴜʙᴇ ᴍᴜsɪᴄ\n".format(
+            text="**» ɴᴏᴡ ᴘʟᴀʏɪɴɢ «**\n📌 **ᴛɪᴛʟᴇ​:** [{}]({})\n🕕 **ᴅᴜʀᴀᴛɪᴏɴ:** `{}` ᴍɪɴᴜᴛᴇs\n💕 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​:** {}\n💔 **ᴘʟᴀʏɪɴɢ ɪɴ​:** `{}`\n🎥 **sᴛʀᴇᴀᴍ ᴛʏᴘᴇ:** ʏᴏᴜᴛᴜʙᴇ ᴍᴜsɪᴄ\n".format(
         title, url, duration, chumtiya, message.chat.title
         ),
             disable_web_page_preview=True,
