@@ -1,7 +1,7 @@
 import os
 from os import path
 from pyrogram import Client, filters
-from pyrogram.types import Message, Voice, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import Message, Voice
 from pyrogram.errors import UserAlreadyParticipant
 from callsmusic import callsmusic, queues
 from callsmusic.callsmusic import client as USER
@@ -26,18 +26,6 @@ from pytgcalls.types.input_stream import InputStream
 def transcode(filename):
     ffmpeg.input(filename).output("input.raw", format='s16le', acodec='pcm_s16le', ac=2, ar='48k').overwrite_output().run() 
     os.remove(filename)
-
-# Inline button
-keyboard = InlineKeyboardMarkup(
-             [
-                [
-                        InlineKeyboardButton(
-                            text="💕 sᴜᴘᴘᴏʀᴛ 💕",
-                            url=f"https://t.me/DevilsHeavenMF")
-                   
-                ]
-            ]
-        )
 
 # Convert seconds to mm:ss
 def convert_seconds(seconds):
@@ -210,10 +198,10 @@ async def play(_, message: Message):
     if int(chat_id) in ACTV_CALLS:
         position = await queues.put(chat_id, file=file_path)
         await message.reply_text(
-            text="» ᴛʀᴀᴄᴋ ǫᴜᴇᴜᴇᴅ ᴀᴛ {} ʙᴀʙʏ\n\n» ɴᴀᴍᴇ​ :{}\n\n🕕 ᴅᴜʀᴀᴛɪᴏɴ : `{}` ᴍɪɴᴜᴛᴇs\n💕 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : {}".format(
-        position, title, duration, chumtiya ),
-            reply_markup=keyboard,
-        )
+            text="**» ᴛʀᴀᴄᴋ ǫᴜᴇᴜᴇᴅ ᴀᴛ** {} **ʙᴀʙʏ**\n\n📌 **ᴛɪᴛʟᴇ​ :**[{}]({})\n\n🕕** ᴅᴜʀᴀᴛɪᴏɴ :** `{}` **ᴍɪɴᴜᴛᴇs**\n💕** ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : **{}".format(
+        position, title, url, duration, chumtiya ),
+            disable_web_page_preview=True,
+             )
     else:
         await callsmusic.pytgcalls.join_group_call(
                 chat_id, 
