@@ -3,7 +3,7 @@
 </p>
 <p align="center"><a href="https://t.me/DevilsHeavenMF"><img src="https://telegra.ph/file/93b08120e36d096cd21ca.jpg"></a></p>
 
-> Fallen Music is a Telegram Bot project that allows you to play music on Telegram through Telegram Voice Chat Feature</b><br>
+Fallen Music is a Telegram Bot project that allows you to play music on Telegram through Telegram Voice Chat Feature</b><br>
 
 <p align="center">
     <img src="https://img.shields.io/github/stars/AnonymousBoy1025/FallenMusic?style=for-the-badge" alt="Stars">
