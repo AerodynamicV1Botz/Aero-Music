@@ -31,6 +31,16 @@
       "description": "Get this value from from my.telegram.org/apps",
       "required": true
     },
+    "OWNER_USERNAME": {
+      "description": "Username of the person who will known as owner of the bot, without @",
+      "required": false,
+      "value": "anonymous_was_bot"
+    },
+    "SUPPORT_GROUP": {
+      "description": "Username of the group where users will go and disturb you, without @",
+      "required": false,
+      "value": "DevilsHeavenMF"
+    },
     "SUDO_USERS": {
       "description": "User IDs of the users who will counted as admin everywhere (if more than one separate them by space).",
       "required": true,
@@ -38,7 +48,7 @@
     },
     "DURATION_LIMIT": {
       "description": "Max audio duration limit for downloads (minutes).",
-      "required": true,
+      "required": false,
       "value": "30"
     }
   }
