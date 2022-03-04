@@ -3,7 +3,7 @@ import requests
 import aiohttp
 import yt_dlp
 
-from config import import BOT_NAME, BOT_USERNAME, SUPPORT_GROUP
+from config import BOT_NAME, BOT_USERNAME, SUPPORT_GROUP
 from pyrogram import filters, Client
 from youtube_search import YoutubeSearch
 
