@@ -3,6 +3,7 @@ import requests
 import aiohttp
 import yt_dlp
 
+from config import import BOT_NAME, BOT_USERNAME, SUPPORT_GROUP
 from pyrogram import filters, Client
 from youtube_search import YoutubeSearch
 
@@ -45,13 +46,13 @@ def song(client, message):
         )
         print(str(e))
         return
-    m.edit("» ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ sᴏɴɢ ꜰʀᴏᴍ ꜰᴀʟʟᴇɴ sᴇʀᴠᴇʀ ʙᴀʙʏ​.")
+    m.edit("» ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ sᴏɴɢ ꜰʀᴏᴍ {} sᴇʀᴠᴇʀ ʙᴀʙʏ​.".format( BOT_NAME )
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = "**» ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ​ -: [𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦](t.me/anonymous_was_bot) 😘**"
+        rep = "**» ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ​ -: [{}](t.me/{}) 😘**".format( BOT_NAME, BOT_USERNAME )
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -59,7 +60,7 @@ def song(client, message):
         message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur)
         m.delete()
     except Exception as e:
-        m.edit("**» ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴇʀʀᴏʀ, ᴄᴏɴᴛᴀᴄᴛ​ -: [𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦](t.me/anonymous_was_bot) 😘**")
+        m.edit("**» ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴇʀʀᴏʀ, ᴄᴏɴᴛᴀᴄᴛ​ -: @{} 😘**".format( SUPPORT_GROUP )
         print(e)
 
     try:
