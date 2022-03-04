@@ -35,7 +35,6 @@ Fallen Music is a Telegram Bot project that allows you to play music on Telegram
 
 ## Features 🔮
 
-- Thumbnail Support
 - Yt-dL Fix
 - Updated Plug-in
 - Super Fast Bot
