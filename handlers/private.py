@@ -2,7 +2,7 @@ import asyncio
 from time import time
 from datetime import datetime
 from helpers.filters import command
-from config import BOT_NAME as bn
+from config import BOT_NAME as bn, BOT_USERNAME, SUPPORT_GROUP
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
@@ -13,8 +13,8 @@ async def start_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/053f99956ccee8416b8f7.jpg",
         caption=f"""**━━━━━━━━━━━━━━━━━━
-🖤 ʜᴇʏ,
-      ɪ ᴀᴍ sᴜᴘᴇʀ ғᴀsᴛ ᴠᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs...
+🖤 ʜᴇʏ {message.from_user.mention()} !
+       ɪ ᴀᴍ [{bn}](t.me/{BOT_USERNAME}) sᴜᴘᴇʀ ғᴀsᴛ ᴠᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs...
 ᴀʟʟ ᴏꜰ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ : /
 ┏━━━━━━━━━━━━━━┓
 ┣★
@@ -28,13 +28,13 @@ async def start_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "✗ ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜ ɢᴇʏ​ ✗", url="https://t.me/fallen_music_bot?startgroup=true")
+                        "✗ ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜ ɢᴇʏ​ ✗", url="https://t.me/{BOT_USERNAME}?startgroup=true")
                   ],[
                     InlineKeyboardButton(
                         "✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ ✗", url="https://t.me/anonymous_was_bot"
                     ),
                     InlineKeyboardButton(
-                        "✗ sᴜᴘᴘᴏʀᴛ ✗", url="https://t.me/DevilsHeavenMF"
+                        "✗ sᴜᴘᴘᴏʀᴛ ✗", url="https://t.me/{SUPPORT_GROUP}"
                     )
                 ],[ 
                     InlineKeyboardButton(
@@ -57,14 +57,14 @@ async def help(client: Client, message: Message):
                         "✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ ✗", url="https://t.me/anonymous_was_bot")
                   ],[
                     InlineKeyboardButton(
-                        "✗ sᴜᴘᴘᴏʀᴛ ✗", url="https://t.me/DevilsHeavenMF"
+                        "✗ sᴜᴘᴘᴏʀᴛ ✗", url="https://t.me/{SUPPORT_GROUP}"
                     ),
                     InlineKeyboardButton(
                         "✗ sᴏᴜʀᴄᴇ ✗", url="https://t.me/DevilsHeavenMF"
                     )
                 ],[ 
                     InlineKeyboardButton(
-                        "✗ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ​​ ✗", url="https://t.me/fallen_music_bot?startgroup=true"
+                        "✗ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ​​ ✗", url="https://t.me/{BOT_USERNAME}?startgroup=true"
                     )]
             ]
         ),
