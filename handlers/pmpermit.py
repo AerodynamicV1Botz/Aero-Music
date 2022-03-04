@@ -1,7 +1,7 @@
 from pyrogram import Client
 import asyncio
-from config import SUDO_USERS
-from config import PMPERMIT
+from config import SUDO_USERS, BOT_NAME, BOT_USERNAME
+from config import PMPERMIT, OWNER_USERNAME
 from pyrogram import filters
 from pyrogram.types import Message
 from callsmusic import client as USER
@@ -18,13 +18,14 @@ async def pmPermit(client: USER, message: Message):
                 return
             await USER.send_message(
                 message.chat.id,
-                "ʜᴇʏ {},\nᴛʜɪs ɪs 🖤 ꜰᴀʟʟᴇɴ ᴍᴜsɪᴄ ʙᴏᴛ 🖤 ᴀssɪsᴛᴀɴᴛ ᴀᴄᴄᴏᴜɴᴛ ʙᴀʙʏ.\n\nᴅᴏɴ'ᴛ sᴘᴀᴍ ʜᴇʀᴇ ʙᴀʙʏ ᴇʟsᴇ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ꜰᴜ*ᴋᴇᴅ ʙʏ 😘[𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦](t.me/anonymous_was_bot).\n".format( message.from_user.mention ),
+                "ʜᴇʏ {},\nᴛʜɪs ɪs [{}](t.me{}) ᴀssɪsᴛᴀɴᴛ ᴀᴄᴄᴏᴜɴᴛ ʙᴀʙʏ.\n\nᴅᴏɴ'ᴛ sᴘᴀᴍ ʜᴇʀᴇ ʙᴀʙʏ ᴇʟsᴇ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ꜰᴜ*ᴋᴇᴅ ʙʏ 😘[𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦](t.me/{OWNER_USERNAME}).\n".format(
+          message.from_user.mention, BOT_NAME, BOT_USERNAME, OWNER_USERNAME ),
             )
             return
 
     
 
-@Client.on_message(filters.command(["/pm"]))
+@Client.on_message(filters.command(["!pm"]))
 async def bye(client: Client, message: Message):
     if message.from_user.id in SUDO_USERS:
         global PMSET
@@ -48,7 +49,7 @@ async def autopmPermiat(client: USER, message: Message):
         return
     message.continue_propagation()    
     
-@USER.on_message(filters.command("a", [".", ""]) & filters.me & filters.private)
+@USER.on_message(filters.command("a", ["!", ""]) & filters.me & filters.private)
 async def pmPermiat(client: USER, message: Message):
     chat_id = message.chat.id
     if not chat_id in pchats:
@@ -58,7 +59,7 @@ async def pmPermiat(client: USER, message: Message):
     message.continue_propagation()    
     
 
-@USER.on_message(filters.command("da", [".", ""]) & filters.me & filters.private)
+@USER.on_message(filters.command("da", ["!", ""]) & filters.me & filters.private)
 async def rmpmPermiat(client: USER, message: Message):
     chat_id = message.chat.id
     if chat_id in pchats:
