@@ -30,6 +30,7 @@ async def start_(client: Client, message: Message):
                 [
                     InlineKeyboardButton(
                         "✗ ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜ ɢᴇʏ​ ✗", url="https://t.me/{}?startgroup=true".format(BOT_USERNAME)
+                       ),
                   ],[
                     InlineKeyboardButton(
                         "✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ ✗", url="https://t.me/{}".format(OWNER_USERNAME)
