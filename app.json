@@ -18,6 +18,11 @@
       "required": true,
       "value": ""
     },
+    "BOT_USERNAME": {
+      "description": "Username of your bot without @",
+      "required": false,
+      "value": "fallen_music_bot"
+    },
     "API_ID": {
       "description": "Get this value from my.telegram.org/apps",
       "required": true
