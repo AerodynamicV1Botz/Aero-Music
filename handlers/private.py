@@ -2,7 +2,7 @@ import asyncio
 from time import time
 from datetime import datetime
 from helpers.filters import command
-from config import BOT_NAME as bn, BOT_USERNAME, SUPPORT_GROUP
+from config import BOT_NAME as bn, BOT_USERNAME, SUPPORT_GROUP, OWNER_USERNAME
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
@@ -31,7 +31,7 @@ async def start_(client: Client, message: Message):
                         "✗ ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜ ɢᴇʏ​ ✗", url="https://t.me/{BOT_USERNAME}?startgroup=true")
                   ],[
                     InlineKeyboardButton(
-                        "✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ ✗", url="https://t.me/anonymous_was_bot"
+                        "✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ ✗", url="https://t.me/{OWNER_USERNAME}"
                     ),
                     InlineKeyboardButton(
                         "✗ sᴜᴘᴘᴏʀᴛ ✗", url="https://t.me/{SUPPORT_GROUP}"
@@ -54,7 +54,7 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ ✗", url="https://t.me/anonymous_was_bot")
+                        "✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ ✗", url="https://t.me/{OWNER_USERNAME}")
                   ],[
                     InlineKeyboardButton(
                         "✗ sᴜᴘᴘᴏʀᴛ ✗", url="https://t.me/{SUPPORT_GROUP}"
