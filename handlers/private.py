@@ -56,17 +56,17 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ ✗", url="https://t.me/{OWNER_USERNAME}")
+                        "✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ ✗", url="https://t.me/{}".format(OWNER_USERNAME) )
                   ],[
                     InlineKeyboardButton(
-                        "✗ sᴜᴘᴘᴏʀᴛ ✗", url="https://t.me/{SUPPORT_GROUP}"
+                        "✗ sᴜᴘᴘᴏʀᴛ ✗", url="https://t.me/{}".format(SUPPORT_GROUP)
                     ),
                     InlineKeyboardButton(
                         "✗ sᴏᴜʀᴄᴇ ✗", url="https://t.me/DevilsHeavenMF"
                     )
                 ],[ 
                     InlineKeyboardButton(
-                        "✗ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ​​ ✗", url="https://t.me/{BOT_USERNAME}?startgroup=true"
+                        "✗ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ​​ ✗", url="https://t.me/{}?startgroup=true".format(BOT_USERNAME)
                     )]
             ]
         ),
