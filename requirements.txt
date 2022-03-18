@@ -8,6 +8,7 @@ requests
 aiohttp
 aiofiles
 asyncio
+heroku3
 python-arq
 youtube_search
 search_engine_parser
