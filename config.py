@@ -7,6 +7,8 @@ admins = {}
 
 API_ID = int(getenv("API_ID", "4110592"))
 API_HASH = getenv("API_HASH", "aa7c849566922168031b95212860ede0")
+ARQ_API_KEY = "ZWFCNH-CUCNLI-YNOZZL-CPYUNU-ARQ"
+ARQ_API_URL = "https://arq.hamker.in/"
 BOT_TOKEN = getenv("BOT_TOKEN","1917637742:AAF61TOx72pQEap0aHp56t9yQL5VUl-C7R0")
 BOT_NAME = getenv("BOT_NAME","⛧𓆩🖤 𝗙𝝙𝗟𝗟𝝣𝗡 𝗠𝗨𝗦𝗜𝗖 🖤𓆪⛧")
 BOT_USERNAME = getenv("BOT_USERNAME", "fallen_music_bot")
