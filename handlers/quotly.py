@@ -42,12 +42,12 @@ def isArgInt(message: Message) -> bool:
 @capture_err
 async def quotly_func(client, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("Reply To a Message To Quote It 😆!")
+        return await message.reply_text("ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ sᴏ ᴛʜᴀᴛ ɪ ᴄᴀɴ ǫᴜᴏᴛᴇ ɪᴛ ! 😉")
     if not message.reply_to_message.text:
         return await message.reply_text(
-            "Replied Message hasn't any text! Please Reply To a Text Message 🥺!"
+            "ᴅɪᴅɴ'ᴛ ғᴏᴜɴᴅ ᴀɴʏ ᴛᴇxᴛ ɪɴ ᴛʜᴀᴛ ᴍᴇssᴀɢᴇ ! 🥺"
         )
-    m = await message.reply_text("`Quoting Messages...`")
+    m = await message.reply_text("`ᴄʀᴇᴀᴛɪɴɢ ᴀ ǫᴜᴏᴛᴇ...`")
     if len(message.command) < 2:
         messages = [message.reply_to_message]
 
@@ -55,7 +55,7 @@ async def quotly_func(client, message: Message):
         arg = isArgInt(message)
         if arg[0]:
             if arg[1] < 2 or arg[1] > 10:
-                return await m.edit("Argument must be between 2-10.")
+                return await m.edit("ɴᴜᴍʙᴇʀ ᴍᴜsᴛ ʙᴇ ʙᴇᴛᴡᴇᴇɴ 2-10.")
             count = arg[1]
             messages = await client.get_messages(
                 message.chat.id,
@@ -71,7 +71,7 @@ async def quotly_func(client, message: Message):
         else:
             if getArg(message) != "r":
                 return await m.edit(
-                    "Incorrect Argument, Pass **'r'** or **'INT'**, **Eample:** `/q 2`"
+                    "Incorrect Argument, Pass **'r'** or **'INT'**, **Example:** `/q 2`"
                 )
             reply_message = await client.get_messages(
                 message.chat.id,
@@ -81,7 +81,7 @@ async def quotly_func(client, message: Message):
             messages = [reply_message]
     else:
         await m.edit(
-            "Incorrect argument !"
+            "ɪɴᴄᴏʀʀᴇᴄᴛ ɴᴜᴍʙᴇʀ !"
         )
         return
     try:
@@ -95,9 +95,9 @@ async def quotly_func(client, message: Message):
         sticker.close()
     except Exception as e:
         await m.edit(
-            "Something wrong happened while quoting messages,"
-            + " This error usually happens when there's a "
-            + " message containing something other than text."
+            "sᴏᴍᴇᴛʜɪɴɢ ᴡʀᴏɴɢ ʜᴀᴩᴩᴇɴᴇᴅ ᴡʜɪʟᴇ ǫᴜᴏᴛɪɴɢ ᴍᴇssᴀɢᴇs,"
+            + " ᴛʜɪs ᴇʀʀᴏʀ ᴜsᴜᴀʟʟʏ ʜᴀᴩᴩᴇɴs ᴡʜᴇɴ ᴛʜᴇʀᴇ's"
+            + " ᴍᴇssᴀɢᴇ ᴄᴏɴᴛᴀɪɴɪɴɢ sᴏᴍᴇᴛʜɪɴɢ ᴏᴛʜᴇʀ ᴛʜᴀɴ ᴛᴇxᴛ."
         )
         e = format_exc()
         print(e)
