@@ -19,3 +19,5 @@ SESSION_NAME = getenv("SESSION_NAME", "BQCdZUPVqWdHudEeVSwMaYj2FoNB7x5LMGmFBTSe6
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "• / ! ^ .").split())
 PMPERMIT = getenv("PMPERMIT", "ENABLE")
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1356469075").split()))
+UPSTREAM_REPO = os.environ.get("UPSTREAM_REPO", "https://github.com/AnonymousBoy1025/FallenMusic")
+U_BRANCH = "master"
