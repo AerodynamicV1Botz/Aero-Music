@@ -9,9 +9,9 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 @Client.on_message(command("start") & filters.private & ~filters.group & ~filters.edited)
 async def start_(client: Client, message: Message):
-    await message.reply_sticker("CAACAgUAAx0CZIiVngACSppiDZZGd6IPFA0TnEuOM3EqFbRxVQACCQMAArU72FSskU3O5FiqcyME")
+    await message.reply_sticker("CAACAgUAAxkBAAEENxZiNtPdibVkMsjLZrUG9NK4hotHQgAC2wEAAoM12VSdN9ujxVtnUyME")
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/053f99956ccee8416b8f7.jpg",
+        photo=f"https://telegra.ph/file/89cbc8b8760b6abff430f.jpg",
         caption=f"""**━━━━━━━━━━━━━━━━━━
 🖤 ʜᴇʏ {message.from_user.mention()} !
 
@@ -29,18 +29,18 @@ async def start_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "✗ ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜ ɢᴇʏ​ ✗", url="https://t.me/{}?startgroup=true".format(BOT_USERNAME)
+                        "✗ ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜ ɢᴇʏ​ ✗", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                        ),
                   ],[
                     InlineKeyboardButton(
-                        "✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ ✗", url="https://t.me/{}".format(OWNER_USERNAME)
+                        "✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ ✗", url=f"https://t.me/{OWNER_USERNAME}"
                     ),
                     InlineKeyboardButton(
-                        "✗ sᴜᴘᴘᴏʀᴛ ✗", url="https://t.me/{}".format(SUPPORT_GROUP)
+                        "✗ sᴜᴘᴘᴏʀᴛ ✗", url=f"https://t.me/{SUPPORT_GROUP}"
                     )
                 ],[ 
                     InlineKeyboardButton(
-                        "✗ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ​ ✗", url="https://t.me/DevilsHeavenMF"
+                        "✗ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ​ ✗", url="https://github.com/AnonymousBoy1025/FallenMusic"
                     )]
             ]
        ),
@@ -49,24 +49,22 @@ async def start_(client: Client, message: Message):
 @Client.on_message(command(["ping", "repo", "anon", "alive"]) & filters.group & ~filters.edited & ~filters.private)
 
 async def help(client: Client, message: Message):
-    await message.reply_sticker("CAACAgUAAx0CZIiVngACSppiDZZGd6IPFA0TnEuOM3EqFbRxVQACCQMAArU72FSskU3O5FiqcyME")
-    await message.reply_text(
-        text=f"""» ɪ ᴀᴍ ᴀʟɪᴠᴇ ʙᴀʙʏ !""",
+    await message.reply_sticker("CAACAgUAAxkBAAEENxZiNtPdibVkMsjLZrUG9NK4hotHQgAC2wEAAoM12VSdN9ujxVtnUyME")
+    await message.reply_photo(
+        photo="https://telegra.ph/file/89cbc8b8760b6abff430f.jpg",
+        caption=f"""<b>🏓 ᴩᴏɴɢ ʙᴀʙʏ !</b>""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ ✗", url="https://t.me/{}".format(OWNER_USERNAME) )
-                  ],[
-                    InlineKeyboardButton(
-                        "✗ sᴜᴘᴘᴏʀᴛ ✗", url="https://t.me/{}".format(SUPPORT_GROUP)
+                        "💖 sᴜᴘᴘᴏʀᴛ 💖", url=f"https://t.me/{SUPPORT_GROUP}"
                     ),
                     InlineKeyboardButton(
-                        "✗ sᴏᴜʀᴄᴇ ✗", url="https://t.me/DevilsHeavenMF"
+                        "🙄 sᴏᴜʀᴄᴇ 🙄", url="https://github.com/AnonymousBoy1025/FallenMusic"
                     )
                 ],[ 
                     InlineKeyboardButton(
-                        "✗ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ​​ ✗", url="https://t.me/{}?startgroup=true".format(BOT_USERNAME)
+                        "🥺 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ​​ 🥺", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )]
             ]
         ),
