@@ -55,7 +55,7 @@ Fallen Music is a Telegram Bot project that allows you to play music on Telegram
 - `/skip` - play next song
 - `/end` - stop music play
 
-## Heroku Deployment 🚀
+## ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 🚀
 
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/AnonymousBoy1025/FallenMusic"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="200" height="35.45"/></a></p>
 The easy way to host this bot, deploy to Heroku, Change the app country to Europe (it will help to make the bot more stable).
@@ -77,7 +77,7 @@ vim .env #Fill up your ENVs ( Steps press i to enter in insert mode then edit th
 python3 main.py # Run the bot
 ```
 
-### Special Credits 💖
+### ᴄʀᴇᴅɪᴛs 💖
 - [𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦](https://github.com/AnonymousBoy1025): Developer
 - [Fallen Music Bot](https://telegram.me/fallen_music_bot): Test Bot
 
