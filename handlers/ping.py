@@ -14,7 +14,7 @@ async def help(client: Client, message: Message):
     await message.reply_sticker("CAACAgUAAxkBAAEENxZiNtPdibVkMsjLZrUG9NK4hotHQgAC2wEAAoM12VSdN9ujxVtnUyME")
     await message.reply_photo(
         photo="https://telegra.ph/file/89cbc8b8760b6abff430f.jpg",
-        caption=f"""<b>🏓 ᴩᴏɴɢ ʙᴀʙʏ !</b>\n`{delta_ping * 1000:.3f} ᴍs`""",
+        caption=f"""<b>🏓 ᴩᴏɴɢ ʙᴀʙʏ !</b>\n   `{delta_ping * 1000:.3f} ᴍs`""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
