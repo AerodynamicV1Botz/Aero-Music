@@ -1,7 +1,8 @@
 {
-  "name": "Fallen Music",
-  "description": "A SuperFast VC Player bot to play songs in Telegram Voice Chat. Powered by PyTgCalls.",
-  "keywords": ["music", "voicechat", "telegram"],
+  "name": "ғᴀʟʟᴇɴ ᴍᴜsɪᴄ",
+  "logo": "https://telegra.ph/file/89cbc8b8760b6abff430f.jpg",
+  "description": "A SuperFast VC Player bot to play songs in Telegram Video Chat. Powered by PyTgCalls.",
+  "keywords": ["music", "voicechat", "telegram", "fallen"],
   "repository": "https://github.com/AnonymousBoy1025/FallenMusic",
   "stack": "container",
   "env": {
@@ -15,7 +16,7 @@
     },
     "BOT_NAME": {
       "description": "A name for your MusicPlayer Bot",
-      "required": true,
+      "required": false,
       "value": ""
     },
     "BOT_USERNAME": {
@@ -25,11 +26,11 @@
     },
     "API_ID": {
       "description": "Get this value from my.telegram.org/apps",
-      "required": true
+      "required": false
     },
     "API_HASH": {
       "description": "Get this value from from my.telegram.org/apps",
-      "required": true
+      "required": false
     },
     "OWNER_USERNAME": {
       "description": "Username of the person who will known as owner of the bot, without @",
@@ -46,10 +47,15 @@
       "required": true,
       "value": "1356469075"
     },
+    "PMPERMIT": {
+      "description": "If you want to notify users who pm to assistant account that it's the assistant account of your bot so don't spam messages there (ENABLE/DISABLE).",
+      "required": false,
+      "value": "ENABLE"
+    },
     "DURATION_LIMIT": {
       "description": "Max audio duration limit for downloads (minutes).",
       "required": false,
-      "value": "30"
+      "value": "60"
     }
   }
 }
