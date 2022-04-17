@@ -1,20 +1,58 @@
+import os
 import asyncio
-from time import time
+import time
+from datetime import datetime
+
+import psutil
+
 from helpers.filters import command
-from config import BOT_USERNAME, SUPPORT_GROUP
+from config import BOT_USERNAME, SUPPORT_GROUP, PING_IMG, BOT_NAME
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+
+
+def get_readable_time(seconds: int) -> str:
+    count = 0
+    ping_time = ""
+    time_list = []
+    time_suffix_list = ["s", "m", "h", "days"]
+    while count < 4:
+        count += 1
+        if count < 3:
+            remainder, result = divmod(seconds, 60)
+        else:
+            remainder, result = divmod(seconds, 24)
+        if seconds == 0 and remainder == 0:
+            break
+        time_list.append(int(result))
+        seconds = int(remainder)
+    for i in range(len(time_list)):
+        time_list[i] = str(time_list[i]) + time_suffix_list[i]
+    if len(time_list) == 4:
+        ping_time += time_list.pop() + ", "
+    time_list.reverse()
+    ping_time += ":".join(time_list)
+    return ping_time
 
 
 @Client.on_message(command(["ping", "repo", "anon", "alive"]) & filters.group & ~filters.edited & ~filters.private)
 
 async def help(client: Client, message: Message):
-    start = time()
-    delta_ping = time() - start
+    boottime = time.time()
+    bot_uptime = int(time.time() - boottime)
+    cpu = psutil.cpu_percent(interval=0.5)
+    mem = psutil.virtual_memory().percent
+    disk = psutil.disk_usage("/").percent
+    start = datetime.now()
+    end = datetime.now()
+    resp = (end - start).microseconds / 1000
     await message.reply_sticker("CAACAgUAAxkBAAEENxZiNtPdibVkMsjLZrUG9NK4hotHQgAC2wEAAoM12VSdN9ujxVtnUyME")
-    await message.reply_photo(
-        photo="https://telegra.ph/file/89cbc8b8760b6abff430f.jpg",
-        caption=f"""<b>🏓 ᴩᴏɴɢ ʙᴀʙʏ !</b>\n   `{delta_ping * 1000:.3f} ᴍs`""",
+    rahul = await message.reply_photo(
+        photo=f"{PING_IMG}",
+        caption="🍑 ᴩɪɴɢɪɴɢ... 🍑",
+    )
+    await rahul.edit_text(
+        f"""<b> ᴩᴏɴɢ ʙᴀʙʏ ! 🍑</b>\n  🏓 `{resp} ᴍs`\n\n<b><u>{BOT_NAME} sʏsᴛᴇᴍ sᴛᴀᴛs:</u></b>\n• ᴜᴩᴛɪᴍᴇ : {get_readable_time((bot_uptime))}\n• ᴄᴩᴜ : {cpu}%\n• ᴅɪsᴋ : {disk}%\n• ʀᴀᴍ : {mem}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -22,12 +60,9 @@ async def help(client: Client, message: Message):
                         "💖 sᴜᴘᴘᴏʀᴛ 💖", url=f"https://t.me/{SUPPORT_GROUP}"
                     ),
                     InlineKeyboardButton(
-                        "🙄 sᴏᴜʀᴄᴇ 🙄", url="https://github.com/AnonymousBoy1025/FallenMusic"
+                        "🙄 sᴏᴜʀᴄᴇ 🙄", url="https://github.com/AnonymousR1025/FallenMusic"
                     )
-                ],[ 
-                    InlineKeyboardButton(
-                        "🥺 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ​​ 🥺", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
-                    )]
+                ]
             ]
         ),
     )
