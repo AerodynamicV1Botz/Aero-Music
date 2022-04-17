@@ -1,51 +1,33 @@
-from pyrogram import Client, errors
-from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent
+from pyrogram.types import (InlineQueryResultArticle,
+                            InputTextMessageContent)
 
-from youtubesearchpython import VideosSearch
+answer = []
 
-
-@Client.on_inline_query()
-async def inline(client: Client, query: InlineQuery):
-    answers = []
-    search_query = query.query.lower().strip().rstrip()
-
-    if search_query == "":
-        await client.answer_inline_query(
-            query.id,
-            results=answers,
-            switch_pm_text="ᴛʏᴩᴇ ᴀ ʏᴏᴜᴛᴜʙᴇ ᴠɪᴅᴇᴏ ɴᴀᴍᴇ...",
-            switch_pm_parameter="help",
-            cache_time=0
-        )
-    else:
-        search = VideosSearch(search_query, limit=50)
-
-        for result in search.result()["result"]:
-            answers.append(
-                InlineQueryResultArticle(
-                    title=result["title"],
-                    description="{}, {} views.".format(
-                        result["duration"],
-                        result["viewCount"]["short"]
-                    ),
-                    input_message_content=InputTextMessageContent(
-                        "https://www.youtube.com/watch?v={}".format(
-                            result["id"]
-                        )
-                    ),
-                    thumb_url=result["thumbnails"][0]["url"]
-                )
-            )
-
-        try:
-            await query.answer(
-                results=answers,
-                cache_time=0
-            )
-        except errors.QueryIdInvalid:
-            await query.answer(
-                results=answers,
-                cache_time=0,
-                switch_pm_text="ᴇʀʀᴏʀ : sᴇᴀʀᴄʜ ᴛɪᴍᴇᴅ ᴏᴜᴛ ",
-                switch_pm_parameter="",
-            )
+answer.extend(
+    [
+        InlineQueryResultArticle(
+            title="🙄 ᴩᴀᴜsᴇ 🙄",
+            description=f"ᴩᴀᴜsᴇ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.",
+            thumb_url="https://telegra.ph/file/701028ce085ecfa961a36.jpg",
+            input_message_content=InputTextMessageContent("/pause"),
+        ),
+        InlineQueryResultArticle(
+            title="😋 ʀᴇsᴜᴍᴇ 😋",
+            description=f"ʀᴇsᴜᴍᴇ ᴛʜᴇ ᴩᴀᴜsᴇᴅ sᴛʀᴇᴀᴍ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.",
+            thumb_url="https://telegra.ph/file/701028ce085ecfa961a36.jpg",
+            input_message_content=InputTextMessageContent("/resume"),
+        ),
+        InlineQueryResultArticle(
+            title="🙂 sᴋɪᴩ 🙂",
+            description=f"sᴋɪᴩ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ ᴀɴᴅ ᴍᴏᴠᴇs ᴛᴏ ᴛʜᴇ ɴᴇxᴛ sᴛʀᴇᴀᴍ.",
+            thumb_url="https://telegra.ph/file/701028ce085ecfa961a36.jpg",
+            input_message_content=InputTextMessageContent("/skip"),
+        ),
+        InlineQueryResultArticle(
+            title="🥺 ᴇɴᴅ 🥺",
+            description="ᴇɴᴅ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.",
+            thumb_url="https://telegra.ph/file/701028ce085ecfa961a36.jpg",
+            input_message_content=InputTextMessageContent("/end"),
+        ),
+    ]
+)
