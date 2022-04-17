@@ -198,10 +198,18 @@ async def play(_, message: Message):
     if int(chat_id) in ACTV_CALLS:
         position = await queues.put(chat_id, file=file_path)
         await message.reply_text(
-            text="**» ᴛʀᴀᴄᴋ ǫᴜᴇᴜᴇᴅ ᴀᴛ** {} **ʙᴀʙʏ**\n\n📌 **ᴛɪᴛʟᴇ​ :**[{}]({})\n\n🕕** ᴅᴜʀᴀᴛɪᴏɴ :** `{}` **ᴍɪɴᴜᴛᴇs**\n💕** ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : **{}".format(
-        position, title, url, duration, chumtiya ),
-            disable_web_page_preview=True,
-             )
+            text="**» ᴛʀᴀᴄᴋ ǫᴜᴇᴜᴇᴅ ᴀᴛ** {position} **ʙᴀʙʏ**\n\n📌 **ᴛɪᴛʟᴇ​ :**[{title}]({url})\n\n🕕** ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}` **ᴍɪɴᴜᴛᴇs**\n💕** ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : **{chumtiya}",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("• sᴜᴩᴩᴏʀᴛ •", url=f"https://t.me/{SUPPORT_GROUP}"),
+                    InlineKeyboardButton("• ᴍᴇɴᴜ •", switch_inline_query_current_chat="")
+                ],[
+                    InlineKeyboardButton("» ᴄʟᴏsᴇ «", callback_data="close_play")
+                ],
+            ]
+        ),
+    )
     else:
         await callsmusic.pytgcalls.join_group_call(
                 chat_id, 
@@ -218,15 +226,13 @@ async def play(_, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("• sᴜᴩᴩᴏʀᴛ •", url=f"https://t.me/{SUPPORT_GROUP}")
-                ],[
+                    InlineKeyboardButton("• sᴜᴩᴩᴏʀᴛ •", url=f"https://t.me/{SUPPORT_GROUP}"),
                     InlineKeyboardButton("• ᴍᴇɴᴜ •", switch_inline_query_current_chat="")
                 ],[
                     InlineKeyboardButton("» ᴄʟᴏsᴇ «", callback_data="close_play")
                 ],
             ]
         ),
-        disable_web_page_preview=True,
     )
 
     return await fallen.delete()
