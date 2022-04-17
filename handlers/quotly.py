@@ -41,6 +41,7 @@ def isArgInt(message: Message) -> bool:
 @Client.on_message(filters.command(["q", "quote"]))
 @capture_err
 async def quotly_func(client, message: Message):
+    await message.delete()
     if not message.reply_to_message:
         return await message.reply_text("ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ sᴏ ᴛʜᴀᴛ ɪ ᴄᴀɴ ǫᴜᴏᴛᴇ ɪᴛ ! 😉")
     if not message.reply_to_message.text:
