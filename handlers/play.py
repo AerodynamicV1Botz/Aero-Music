@@ -1,7 +1,7 @@
 import os
 from os import path
 from pyrogram import Client, filters
-from pyrogram.types import Message, Voice, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import Message, Voice, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors import UserAlreadyParticipant
 from callsmusic import callsmusic, queues
 from callsmusic.callsmusic import client as USER
@@ -222,7 +222,7 @@ async def play(_, message: Message):
                 ],[
                     InlineKeyboardButton("• ᴍᴇɴᴜ •", switch_inline_query_current_chat="")
                 ],[
-                    InlineKeyboardButton("» ᴄʟᴏsᴇ «", callback_data="")
+                    InlineKeyboardButton("» ᴄʟᴏsᴇ «", callback_data="close_play")
                 ],
             ]
         ),
@@ -231,3 +231,6 @@ async def play(_, message: Message):
 
     return await fallen.delete()
     
+@Client.on_callback_query(filters.regex("close_play"))
+async def in_close_play(_, query: CallbackQuery):
+    await query.message.delete()
