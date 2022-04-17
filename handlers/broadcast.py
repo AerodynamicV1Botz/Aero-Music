@@ -9,6 +9,7 @@ from config import SUDO_USERS
 
 @Client.on_message(filters.command(["broadcast", "gcast"]))
 async def broadcast(_, message: Message):
+    await message.delete()
     sent=0
     failed=0
     if message.from_user.id not in SUDO_USERS:
