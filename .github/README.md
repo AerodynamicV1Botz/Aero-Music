@@ -18,22 +18,17 @@ Fallen Music is a Telegram Bot project that allows you to play music on Telegram
     <a href="https://pypi.org/project/Pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?color=yellow&label=pyrogram&logo=python&logoColor=green&style=for-the-badge" /></a>
 </p>
 
-<h3>Requirements 📝</h3>
+<details>
+<summary><h3> Requirements 📝</h3></summary>
 
 - FFmpeg
 - NodeJS [nodesource.com](https://nodesource.com/)
 - Python 3.7 or higher
 - [PyTgCalls](https://github.com/pytgcalls/pytgcalls)
+</details>
 
-### 🧪 Get `SESSION_NAME` from below:
-
-[Generate Pyrogram Session](https://telegram.me/BotFather) ``Pyrogram``
-
-### 🎖 History
-
-[![Mentioned in Awesome Python](https://awesome.re/mentioned-badge.svg)](https://github.com/AnonymousR1025/FallenMusic)
-
-## Features 🔮
+<details>
+<summary><h3> Features 🔮</h3></summary>
 
 - Yt-dL Fix
 - Updated Plug-in
@@ -42,8 +37,10 @@ Fallen Music is a Telegram Bot project that allows you to play music on Telegram
 - Fast Download Song From Server
 - Program Updated
 - Smooth Player
+</details>
 
-## Commands 🛠
+<details>
+<summary><h3> Commands 🛠</h3></summary> 
 
 - `/play <song name>` - play song you requested
 - `/song <song name>` - download songs you want quickly
@@ -54,11 +51,21 @@ Fallen Music is a Telegram Bot project that allows you to play music on Telegram
 - `/resume` - resume song play
 - `/skip` - play next song
 - `/end` - stop music play
+</details>
+
+### 🧪 Get `SESSION_NAME` variable:
+
+[``Pyrogram Session``](https://telegram.me/StringFatherBot)
 
 ## ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 🚀
 
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/AnonymousR1025/FallenMusic"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="200" height="35.45"/></a></p>
-The easy way to host this bot, deploy to Heroku, Change the app country to Europe (it will help to make the bot more stable).
+The easiest way to host this bot, Deploy on Heroku, Change the app country to Europe (it will help to make the bot more stable).
+
+## ᴅᴇᴩʟᴏʏ ᴏɴ ᴏᴋᴛᴇᴛᴏ
+
+<p align="center"><a href="https://cloud.okteto.com/deploy?repository=https://github.com/AnonymousR1025/FallenMusic"><img src="https://img.shields.io/badge/Deploy%20To%20Okteto-informational?style=for-the-badge&logo=Okteto" width="200" height="35.45"/></a></p>
+The second easiest way to host this bot, Deploy on Okteto Cloud
 
 ## ᴅᴇᴘʟᴏʏ ᴏɴ ᴠᴘꜱ ꜱᴇʀᴠᴇʀ 📡
 
@@ -84,7 +91,8 @@ python3 main.py # Run the bot
 [![ForTheBadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 ### Support & Developer 🎑
-<a href="https://telegram.me/DevilsHeavenMF"><img src="https://img.shields.io/badge/Join-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://telegram.me/anonymous_was_bot"><img src="https://img.shields.io/badge/%20Developer-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://telegram.me/DevilsHeavenMF"><img src="https://img.shields.io/badge/-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://telegram.me/anonymous_was_bot"><img src="https://img.shields.io/badge/%20Developer-blue.svg?style=for-the-badge&logo=Telegram"></a>
 
 ------------------------------------------------
 -------------------------------------------------
