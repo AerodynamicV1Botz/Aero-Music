@@ -12,6 +12,7 @@ raw_files = os.path.realpath("raw_files")
 @errors
 @sudo_users_only
 async def clear_downloads(_, message: Message):
+    await message.delete()
     ls_dir = os.listdir(downloads)
     if ls_dir:
         for file in os.listdir(downloads):
@@ -25,6 +26,7 @@ async def clear_downloads(_, message: Message):
 @errors
 @sudo_users_only
 async def clear_raw(_, message: Message):
+    await message.delete()
     ls_dir = os.listdir(raw_files)
     if ls_dir:
         for file in os.listdir(raw_files):
@@ -38,6 +40,7 @@ async def clear_raw(_, message: Message):
 @errors
 @sudo_users_only
 async def cleanup(_, message: Message):
+    await message.delete()
     pth = os.path.realpath(".")
     ls_dir = os.listdir(pth)
     if ls_dir:
