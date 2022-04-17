@@ -38,6 +38,7 @@ def get_readable_time(seconds: int) -> str:
 @Client.on_message(command(["ping", "repo", "anon", "alive"]) & filters.group & ~filters.edited & ~filters.private)
 
 async def help(client: Client, message: Message):
+    await message.delete()
     boottime = time.time()
     bot_uptime = int(time.time() - boottime)
     cpu = psutil.cpu_percent(interval=0.5)
