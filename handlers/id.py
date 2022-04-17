@@ -6,8 +6,9 @@ from helpers.filters import command
 from helpers.get_file_id import get_file_id
 
 
-@Client.on_message(command(["id", f"id@{BOT_USERNAME}"]))
+@Client.on_message(command(["id", "stickerid", "stkid", "stckrid", f"id@{BOT_USERNAME}"]))
 async def showid(_, message: Message):
+    await message.delete()
     chat_type = message.chat.type
 
     if chat_type == "private":
