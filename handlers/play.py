@@ -1,7 +1,7 @@
 import os
 from os import path
 from pyrogram import Client, filters
-from pyrogram.types import Message, Voice
+from pyrogram.types import Message, Voice, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserAlreadyParticipant
 from callsmusic import callsmusic, queues
 from callsmusic.callsmusic import client as USER
@@ -92,7 +92,7 @@ async def play(_, message: Message):
         await USER.get_chat(chid)
     except:
         await fallen.edit(
-            f"<i>» ᴜsᴇʀʙᴏᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ʙᴀʙʏ.</i>")
+            f"<i>» ᴀssɪsᴛᴀɴᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ʙᴀʙʏ.</i>")
         return
     
     audio = (
@@ -214,11 +214,20 @@ async def play(_, message: Message):
             )
 
         await message.reply_text(
-            text="**» ɴᴏᴡ ᴘʟᴀʏɪɴɢ «**\n📌 **ᴛɪᴛʟᴇ​:** [{}]({})\n🕕 **ᴅᴜʀᴀᴛɪᴏɴ:** `{}` ᴍɪɴᴜᴛᴇs\n💕 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​:** {}\n💔 **ᴘʟᴀʏɪɴɢ ɪɴ​:** `{}`\n🎥 **sᴛʀᴇᴀᴍ ᴛʏᴘᴇ:** ʏᴏᴜᴛᴜʙᴇ ᴍᴜsɪᴄ\n".format(
-        title, url, duration, chumtiya, message.chat.title
+            text=f"**» ɴᴏᴡ ᴘʟᴀʏɪɴɢ «**\n📌 **ᴛɪᴛʟᴇ​:** [{title}]({url})\n🕕 **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}` ᴍɪɴᴜᴛᴇs\n💕 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​:** {chumtiya}\n💔 **ᴘʟᴀʏɪɴɢ ɪɴ​:** `{message.chat.title}`\n🎥 **sᴛʀᴇᴀᴍ ᴛʏᴘᴇ:** ʏᴏᴜᴛᴜʙᴇ ᴍᴜsɪᴄ\n",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("• sᴜᴩᴩᴏʀᴛ •", url=f"https://t.me/{SUPPORT_GROUP}")
+                ],[
+                    InlineKeyboardButton("• ᴍᴇɴᴜ •", switch_inline_query_current_chat="")
+                ],[
+                    InlineKeyboardButton("» ᴄʟᴏsᴇ «", callback_data="")
+                ],
+            ]
         ),
-            disable_web_page_preview=True,
-             )
+        disable_web_page_preview=True,
+    )
 
     return await fallen.delete()
     
