@@ -3,7 +3,7 @@
   "logo": "https://telegra.ph/file/89cbc8b8760b6abff430f.jpg",
   "description": "A SuperFast VC Player bot to play songs in Telegram Video Chat. Powered by PyTgCalls.",
   "keywords": ["music", "voicechat", "telegram", "fallen"],
-  "repository": "https://github.com/AnonymousBoy1025/FallenMusic",
+  "repository": "https://github.com/AnonymousR1025/FallenMusic",
   "stack": "container",
   "env": {
     "SESSION_NAME": {
@@ -22,7 +22,7 @@
     "BOT_USERNAME": {
       "description": "Username of your bot without @",
       "required": false,
-      "value": "fallen_music_bot"
+      "value": ""
     },
     "API_ID": {
       "description": "Get this value from my.telegram.org/apps",
@@ -47,6 +47,14 @@
       "required": true,
       "value": "1356469075"
     },
+    "START_IMG": {
+      "description": "Telegraph link of the pic which you want to set as the start pic of your bot",
+      "required": false
+    },
+    "PING_IMG": {
+      "description": "Telegraph link of the pic which you want to set as the ping pic of your bot",
+      "required": false
+    },
     "PMPERMIT": {
       "description": "If you want to notify users who pm to assistant account that it's the assistant account of your bot so don't spam messages there (ENABLE/DISABLE).",
       "required": false,
@@ -55,7 +63,7 @@
     "DURATION_LIMIT": {
       "description": "Max audio duration limit for downloads (minutes).",
       "required": false,
-      "value": "60"
+      "value": "90"
     }
   }
 }
