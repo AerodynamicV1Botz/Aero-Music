@@ -1,6 +1,6 @@
 import os
 import asyncio
-from time
+import time
 from datetime import datetime
 
 import psutil
