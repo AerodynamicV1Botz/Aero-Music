@@ -16,7 +16,7 @@ import pyrogram
 
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-@app.on_message(pyrogram.filters.command([("search", "s", "yts", "yt")]))
+@app.on_message(pyrogram.filters.command(["search"]))
 async def ytsearch(_, message: Message):
     await message.delete()
     try:
