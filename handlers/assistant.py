@@ -12,7 +12,7 @@ from callsmusic.callsmusic import client as user
 )
 @authorized_users_only
 async def join_chat(c: Client, m: Message):
-    await message.delete()
+    await m.delete()
     chat_id = m.chat.id
     try:
         invite_link = await m.chat.export_invite_link()
