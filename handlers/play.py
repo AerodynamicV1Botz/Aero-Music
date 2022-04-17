@@ -1,7 +1,7 @@
 import os
 from os import path
 from pyrogram import Client, filters
-from pyrogram.types import Message, Voice
+from pyrogram.types import Message, Voice, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors import UserAlreadyParticipant
 from callsmusic import callsmusic, queues
 from callsmusic.callsmusic import client as USER
@@ -11,7 +11,7 @@ import aiohttp
 from youtube_search import YoutubeSearch
 import converter
 from downloaders import youtube
-from config import DURATION_LIMIT
+from config import DURATION_LIMIT, SUPPORT_GROUP
 from helpers.filters import command
 from helpers.decorators import errors
 from helpers.errors import DurationLimitError
@@ -53,6 +53,8 @@ async def play(_, message: Message):
     global que
     global useer
 
+    await message.delete()
+
     fallen = await message.reply("» ᴘʀᴏᴄᴇssɪɴɢ​... ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ʙᴀʙʏ🔎")
 
     chumtiya = message.from_user.mention
@@ -92,7 +94,7 @@ async def play(_, message: Message):
         await USER.get_chat(chid)
     except:
         await fallen.edit(
-            f"<i>» ᴜsᴇʀʙᴏᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ʙᴀʙʏ.</i>")
+            f"<i>» ᴀssɪsᴛᴀɴᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ ʙᴀʙʏ.</i>")
         return
     
     audio = (
@@ -198,10 +200,17 @@ async def play(_, message: Message):
     if int(chat_id) in ACTV_CALLS:
         position = await queues.put(chat_id, file=file_path)
         await message.reply_text(
-            text="**» ᴛʀᴀᴄᴋ ǫᴜᴇᴜᴇᴅ ᴀᴛ** {} **ʙᴀʙʏ**\n\n📌 **ᴛɪᴛʟᴇ​ :**[{}]({})\n\n🕕** ᴅᴜʀᴀᴛɪᴏɴ :** `{}` **ᴍɪɴᴜᴛᴇs**\n💕** ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : **{}".format(
-        position, title, url, duration, chumtiya ),
-            disable_web_page_preview=True,
-             )
+            text="**» ᴛʀᴀᴄᴋ ǫᴜᴇᴜᴇᴅ ᴀᴛ** {position} **ʙᴀʙʏ**\n\n📌 **ᴛɪᴛʟᴇ​ :**[{title}]({url})\n\n🕕** ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}` **ᴍɪɴᴜᴛᴇs**\n💕** ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : **{chumtiya}",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("• sᴜᴩᴩᴏʀᴛ •", url=f"https://t.me/{SUPPORT_GROUP}"),
+                    InlineKeyboardButton("» ᴄʟᴏsᴇ «", callback_data="close_play")
+                ],
+            ]
+        ),
+        disable_web_page_preview=True,
+    )
     else:
         await callsmusic.pytgcalls.join_group_call(
                 chat_id, 
@@ -214,11 +223,20 @@ async def play(_, message: Message):
             )
 
         await message.reply_text(
-            text="**» ɴᴏᴡ ᴘʟᴀʏɪɴɢ «**\n📌 **ᴛɪᴛʟᴇ​:** [{}]({})\n🕕 **ᴅᴜʀᴀᴛɪᴏɴ:** `{}` ᴍɪɴᴜᴛᴇs\n💕 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​:** {}\n💔 **ᴘʟᴀʏɪɴɢ ɪɴ​:** `{}`\n🎥 **sᴛʀᴇᴀᴍ ᴛʏᴘᴇ:** ʏᴏᴜᴛᴜʙᴇ ᴍᴜsɪᴄ\n".format(
-        title, url, duration, chumtiya, message.chat.title
+            text=f"**» ɴᴏᴡ ᴘʟᴀʏɪɴɢ «**\n📌 **ᴛɪᴛʟᴇ​:** [{title}]({url})\n🕕 **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}` ᴍɪɴᴜᴛᴇs\n💕 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​:** {chumtiya}\n💔 **ᴘʟᴀʏɪɴɢ ɪɴ​:** `{message.chat.title}`\n🎥 **sᴛʀᴇᴀᴍ ᴛʏᴘᴇ:** ʏᴏᴜᴛᴜʙᴇ ᴍᴜsɪᴄ\n",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("• sᴜᴩᴩᴏʀᴛ •", url=f"https://t.me/{SUPPORT_GROUP}"),
+                    InlineKeyboardButton("» ᴄʟᴏsᴇ «", callback_data="close_play")
+                ],
+            ]
         ),
-            disable_web_page_preview=True,
-             )
+        disable_web_page_preview=True,
+    )
 
     return await fallen.delete()
-    
+
+@Client.on_callback_query(filters.regex("close_play"))
+async def in_close_play(_, query: CallbackQuery):
+    await query.message.delete()
