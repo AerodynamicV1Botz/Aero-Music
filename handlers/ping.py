@@ -6,7 +6,7 @@ from datetime import datetime
 import psutil
 
 from helpers.filters import command
-from config import BOT_USERNAME, SUPPORT_GROUP, PING_IMG
+from config import BOT_USERNAME, SUPPORT_GROUP, PING_IMG, MUSIC_BOT_NAME
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
