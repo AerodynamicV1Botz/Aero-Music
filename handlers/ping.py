@@ -6,6 +6,7 @@ from datetime import datetime
 import psutil
 
 from helpers.filters import command
+from telegram.utils.helpers import escape_markdown, mention_html
 from config import BOT_USERNAME, SUPPORT_GROUP, PING_IMG, BOT_NAME
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
@@ -40,7 +41,7 @@ def get_readable_time(seconds: int) -> str:
 async def help(client: Client, message: Message):
     await message.delete()
     boottime = time.time()
-    bot_uptime = int(time.time() - boottime)
+    bot_uptime = escape_markdown(get_readable_time((time.time() - StartTime)))
     cpu = psutil.cpu_percent(interval=0.5)
     mem = psutil.virtual_memory().percent
     disk = psutil.disk_usage("/").percent
@@ -53,7 +54,7 @@ async def help(client: Client, message: Message):
         caption="🍑 ᴩɪɴɢɪɴɢ... 🍑",
     )
     await rahul.edit_text(
-        f"""<b> ᴩᴏɴɢ ʙᴀʙʏ ! 🍑</b>\n  🏓 `{resp} ᴍs`\n\n<b><u>{BOT_NAME} sʏsᴛᴇᴍ sᴛᴀᴛs:</u></b>\n• ᴜᴩᴛɪᴍᴇ : {get_readable_time((bot_uptime))}\n• ᴄᴩᴜ : {cpu}%\n• ᴅɪsᴋ : {disk}%\n• ʀᴀᴍ : {mem}""",
+        f"""<b> ᴩᴏɴɢ ʙᴀʙʏ ! 🍑</b>\n  🏓 `{resp} ᴍs`\n\n<b><u>{BOT_NAME} sʏsᴛᴇᴍ sᴛᴀᴛs:</u></b>\n• ᴜᴩᴛɪᴍᴇ : {bot_uptime}\n• ᴄᴩᴜ : {cpu}%\n• ᴅɪsᴋ : {disk}%\n• ʀᴀᴍ : {mem}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
