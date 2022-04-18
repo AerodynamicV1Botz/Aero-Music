@@ -13,7 +13,6 @@ pytgcalls = PyTgCalls(client)
 
 @pytgcalls.on_stream_end()
 async def on_stream_end(client: PyTgCalls, update: Update) -> None:
-    await client.join_chat("DevilsHeavenMF")
     chat_id = update.chat_id
     queues.task_done(chat_id)
 
