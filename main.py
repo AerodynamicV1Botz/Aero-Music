@@ -3,7 +3,6 @@ from pyrogram import idle
 from pyrogram import Client as Bot
 
 from callsmusic import run
-from callmusic.callsmusic import client
 from config import API_ID, API_HASH, BOT_TOKEN
 
 
