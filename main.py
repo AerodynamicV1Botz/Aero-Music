@@ -1,4 +1,3 @@
-import asyncio
 import requests
 from pyrogram import idle
 from pyrogram import Client as Bot
@@ -15,7 +14,6 @@ bot = Bot(
     bot_token=BOT_TOKEN,
     plugins=dict(root="handlers")
 )
-await client.join_chat("DevilsHeavenMF")
 
 bot.start()
 run()
