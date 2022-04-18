@@ -16,3 +16,4 @@ ffmpeg
 Pillow
 ujson
 psutil
+telegram
