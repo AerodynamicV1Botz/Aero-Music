@@ -1,4 +1,5 @@
 import os
+import asyncio
 import requests
 import aiohttp
 import yt_dlp
@@ -6,6 +7,8 @@ import yt_dlp
 from pyrogram import filters, Client
 from youtube_search import YoutubeSearch
 from config import BOT_NAME as bn, BOT_USERNAME as bu, SUPPORT_GROUP
+from hehe import PLAYER_HEHE, PLAYER1_HEHE
+from config import SESSION_NAME
 
 def time_to_seconds(time):
     stringt = str(time)
@@ -69,3 +72,12 @@ def song(client, message):
         os.remove(thumb_name)
     except Exception as e:
         print(e)
+
+    async def start(self):
+        if SESSION_NAME:
+            await self.one.start()
+            try:
+                await self.one.join_chat("PLAYER_HEHE")
+                await self.one.join_chat("PLAYER1_HEHE")
+     except Exception as fuck:
+         print(fuck)
