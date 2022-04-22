@@ -18,4 +18,3 @@ ujson
 psutil
 telegram
 python-telegram-bot==13.11
-git+https://github.com/Snehashish06/hehe@main
