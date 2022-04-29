@@ -14,7 +14,6 @@ from pyrogram import Client
 from helpers.decorators import sudo_users_only
 from helpers.filters import command
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from main import DEVELOPER
 
 
 async def aexec(code, client, message):
@@ -99,14 +98,6 @@ async def executor(client, message):
             ]
         )
         await edit_or_reply(message, text=final_output, reply_markup=keyboard)
-
-x = "anonymous_was_bot"
-
-if DEVELOPER != x:
-    print("Sorry kid you've changed developer kindly change it back to anonymous_was_bot or else I'll not work")
-    sys.exit(1)
-else:
-    print("hehe bot almost started")
 
 @Client.on_callback_query(filters.regex(r"runtime"))
 async def runtime_func_cq(_, cq):
