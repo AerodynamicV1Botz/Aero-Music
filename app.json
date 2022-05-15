@@ -32,10 +32,10 @@
       "description": "Get this value from from my.telegram.org/apps",
       "required": false
     },
-    "OWNER_USERNAME": {
-      "description": "Username of the person who will known as owner of the bot, without @",
-      "required": false,
-      "value": "anonymous_was_bot"
+    "OWNER_ID": {
+      "description": "User id of the person who will known as owner of the bot.",
+      "required": true,
+      "value": "1356469075"
     },
     "SUPPORT_GROUP": {
       "description": "Username of the group where users will go and disturb you, without @",
