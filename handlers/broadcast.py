@@ -5,14 +5,14 @@ from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
 
 from callsmusic.callsmusic import client as Anonymous
-from config import OWNER_ID
+from config import SUDO_USERS
 
 @Client.on_message(filters.command(["broadcast", "gcast"]))
 async def broadcast(_, message: Message):
     await message.delete()
     sent=0
     failed=0
-    if message.from_user.id not in OWNER_ID:
+    if message.from_user.id not in SUDO_USERS:
         return
     else:
         wtf = await message.reply("`sᴛᴀʀᴛɪɴɢ ʙʀᴏᴀᴅᴄᴀsᴛ​ ʙᴀʙʏ...`")
