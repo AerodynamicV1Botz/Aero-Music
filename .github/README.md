@@ -3,7 +3,7 @@
 </p>
 <p align="center"><a href="https://t.me/AerodynamicV1_Promotion"><img src="https://telegra.ph//file/8e671d8b5d88f85d3c180.jpg"></a></p>
 
-Fallen Music is a Telegram Bot project that allows you to play music on Telegram through Telegram Voice Chat Feature</b><br>
+🎧Aero-Music🎵 is a Telegram Bot project that allows you to play music on Telegram through Telegram Voice Chat Feature</b><br>
 
 <p align="center">
     <img src="https://img.shields.io/github/stars/AerodynamicV1Botz/Aero-Music?style=for-the-badge" alt="Stars">
