@@ -1,1 +1,1 @@
-worker: python3 main.py
+orker: python3 main.py
