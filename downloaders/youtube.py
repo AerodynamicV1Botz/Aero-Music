@@ -1,4 +1,4 @@
-from os import path
+rom os import path
 
 from yt_dlp import YoutubeDL
 
