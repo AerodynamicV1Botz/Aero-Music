@@ -8,7 +8,6 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 @Client.on_message(command("start") & filters.private & ~filters.group & ~filters.edited)
 async def start_(client: Client, message: Message):
-    await message.reply_sticker("CAACAgUAAxkBAAEENxZiNtPdibVkMsjLZrUG9NK4hotHQgAC2wEAAoM12VSdN9ujxVtnUyME")
     await message.reply_photo(
         photo=f"{START_IMG}",
         caption=f"""**━━━━━━━━━━━━━━━━━━
@@ -19,32 +18,36 @@ async def start_(client: Client, message: Message):
 ᴀʟʟ ᴏꜰ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ ᴍʏ ᴄᴏᴍᴍᴀɴᴅ ʜᴀɴᴅʟᴇʀs : ( `/ . • $ ^ ~ + * ?` )
 ┏━━━━━━━━━━━━━━┓
 ┣★
-┣★ ᴍᴀᴅᴇ ʙʏ: [𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦](t.me/{me})
+┣★ ᴍᴀᴅᴇ ʙʏ: [AerodynamicV1~🇮🇳](t.me/AerodynamicV1_OFFICIAL)
 ┣★
 ┗━━━━━━━━━━━━━━┛
 
-💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇsᴛɪᴏɴs ᴀʙᴏᴜᴛ ᴍᴇ ᴛʜᴇɴ ᴅᴍ ᴛᴏ ᴍʏ [ᴏᴡɴᴇʀ](t.me/{me}) ʙᴀʙʏ...
+💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇsᴛɪᴏɴs ᴀʙᴏᴜᴛ ᴍᴇ ᴛʜᴇɴ ᴅᴍ ᴛᴏ ᴍʏ [ᴏᴡɴᴇʀ](t.me/AerodynamicV1_OFFICIAL) ʙᴀʙʏ...
 ━━━━━━━━━━━━━━━━━━**""",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🥺 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ​ 🥺", url=f"https://t.me/{bu}?startgroup=true"
+                        "➕Add Me To Your Chat➕", url=f"https://t.me/{bu}?startgroup=true"
                        ),
                   ],[
                     InlineKeyboardButton(
-                        "💔 ᴏᴡɴᴇʀ 💔", url=f"https://t.me/{me}"
+                        "👑ᴏᴡɴᴇʀ👑", url=f"https://t.me/AerodynamicV1_OFFICIAL"
                     ),
                     InlineKeyboardButton(
-                        "🍒 sᴜᴘᴘᴏʀᴛ 🍒", url=f"https://t.me/{SUPPORT_GROUP}"
+                        "•sᴜᴘᴘᴏʀᴛ💬", url=f"https://t.me/{SUPPORT_GROUP}"
                     )
                 ],[
                     InlineKeyboardButton(
                         "🔎 ɪɴʟɪɴᴇ 🔎", switch_inline_query_current_chat=""
                     ),
                     InlineKeyboardButton(
-                        "🤯 sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ​ 🤯", url="https://github.com/AerodynamicV1Botz/Aero-Music"
-                    )]
+                        "•sᴏᴜʀᴄᴇ ᴄᴏᴅᴇℹ️​", url="https://github.com/AerodynamicV1Botz/Aero-Music"
+                    )],[
+                    InlineKeyboardButton(
+                        "New Update Or More✅", url=f"https://t.me/AerodynamicV1_UPDATE"
+                       ),
+                  ]
             ]
        ),
     )
