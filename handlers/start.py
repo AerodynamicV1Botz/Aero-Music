@@ -18,7 +18,7 @@ async def start_(client: Client, message: Message):
 ᴀʟʟ ᴏꜰ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ ᴍʏ ᴄᴏᴍᴍᴀɴᴅ ʜᴀɴᴅʟᴇʀs : ( `/ . • $ ^ ~ + * ?` )
 ┏━━━━━━━━━━━━━━┓
 ┣★
-┣★ ᴍᴀᴅᴇ ʙʏ: [AerodynamicV1~🇮🇳](t.me/AerodynamicV1_OFFICIAL)
+┣★ ᴍᴀᴅᴇ ʙʏ: [AerodynamicV1~🇮🇳](t.me/{me})
 ┣★
 ┗━━━━━━━━━━━━━━┛
 
@@ -32,7 +32,7 @@ async def start_(client: Client, message: Message):
                        ),
                   ],[
                     InlineKeyboardButton(
-                        "👑ᴏᴡɴᴇʀ👑", url=f"https://t.me/AerodynamicV1_OFFICIAL"
+                        "👑ᴏᴡɴᴇʀ👑", url=f"https://t.me/{me}"
                     ),
                     InlineKeyboardButton(
                         "•sᴜᴘᴘᴏʀᴛ💬", url=f"https://t.me/{SUPPORT_GROUP}"
