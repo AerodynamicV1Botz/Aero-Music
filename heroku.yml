@@ -1,4 +1,4 @@
-uild:
+build:
   docker:
     worker: Dockerfile
 run:
