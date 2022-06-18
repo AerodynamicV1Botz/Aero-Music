@@ -1,4 +1,4 @@
-import requests
+mport requests
 from pyrogram import idle
 from pyrogram import Client as Bot
 
