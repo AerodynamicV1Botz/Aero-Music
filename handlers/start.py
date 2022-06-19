@@ -32,7 +32,7 @@ Press /help to see all the commands and how they work!
                        ),
                   ],[
                     InlineKeyboardButton(
-                        "👑ᴏᴡɴᴇʀ👑", url=f"https://t.me/{me}"
+                        "👑Owner👑", url=f"https://t.me/{me}"
                     ),
                     InlineKeyboardButton(
                         "[► ChitChat💬 ◄]", url=f"https://t.me/{SUPPORT_GROUP}"
@@ -42,7 +42,7 @@ Press /help to see all the commands and how they work!
                         "[►Inline🔎◄]", switch_inline_query_current_chat=""
                     ),
                     InlineKeyboardButton(
-                        ""[► Help ◄]​", url=f"t.me/Aero_MusicBot?help=help")"
+                        "[► Help ◄]​", url=f"t.me/Aero_MusicBot?help=help"
                     )],[
                     InlineKeyboardButton(
                         "New Update Or More✅", url=f"https://t.me/AerodynamicV1_UPDATE"
