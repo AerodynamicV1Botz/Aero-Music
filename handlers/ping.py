@@ -54,7 +54,7 @@ async def help(client: Client, message: Message):
         caption="🍑 ᴩɪɴɢɪɴɢ... 🍑",
     )
     await rahul.edit_text(
-        f"""<b> ᴩᴏɴɢ ʙᴀʙʏ ! 🍑</b>\n  🏓 `{resp} ᴍs`\n\n<b><u>{BOT_NAME} sʏsᴛᴇᴍ sᴛᴀᴛs:</u></b>\n\n• ᴜᴩᴛɪᴍᴇ : {bot_uptime}\n• ᴄᴩᴜ : {cpu}%\n• ᴅɪsᴋ : {disk}%\n• ʀᴀᴍ : {mem}""",
+        f"""<b> Ping Pong ! 🍑</b>\n  🏓 `{resp} ᴍs`\n\n<b><u>{BOT_NAME} System Stats:</u></b>\n\n• ᴜᴩᴛɪᴍᴇ : {bot_uptime}\n• ᴄᴩᴜ : {cpu}%\n• ᴅɪsᴋ : {disk}%\n• ʀᴀᴍ : {mem}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
