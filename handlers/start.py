@@ -35,14 +35,14 @@ async def start_(client: Client, message: Message):
                         "👑ᴏᴡɴᴇʀ👑", url=f"https://t.me/{me}"
                     ),
                     InlineKeyboardButton(
-                        "•sᴜᴘᴘᴏʀᴛ💬", url=f"https://t.me/{SUPPORT_GROUP}"
+                        "[► ChitChat💬 ◄]", url=f"https://t.me/{SUPPORT_GROUP}"
                     )
                 ],[
                     InlineKeyboardButton(
-                        "🔎 ɪɴʟɪɴᴇ 🔎", switch_inline_query_current_chat=""
+                        "[►Inline🔎◄]", switch_inline_query_current_chat=""
                     ),
                     InlineKeyboardButton(
-                        "•sᴏᴜʀᴄᴇ ᴄᴏᴅᴇℹ️​", url="https://github.com/AerodynamicV1Botz/Aero-Music"
+                        ""[► Help ◄]​", url=f"t.me/Aero_MusicBot?help=help")"
                     )],[
                     InlineKeyboardButton(
                         "New Update Or More✅", url=f"https://t.me/AerodynamicV1_UPDATE"
