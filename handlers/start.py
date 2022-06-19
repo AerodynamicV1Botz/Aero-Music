@@ -35,14 +35,14 @@ Press /help to see all the commands and how they work!
                         "👑Owner👑", url=f"https://t.me/{me}"
                     ),
                     InlineKeyboardButton(
-                        "[► ChitChat💬 ◄]", url=f"https://t.me/{SUPPORT_GROUP}"
+                        "[► Instagram ◄]​", url=f"https://instagram.com/aerodynamicv1_official?utm_medium=copy_link"
                     )
                 ],[
                     InlineKeyboardButton(
                         "[►Inline🔎◄]", switch_inline_query_current_chat=""
                     ),
                     InlineKeyboardButton(
-                        "[► Help ◄]​", url=f"t.me/Aero_MusicBot?help=help"
+                        "[► ChitChat💬 ◄]", url=f"https://t.me/{SUPPORT_GROUP}"
                     )],[
                     InlineKeyboardButton(
                         "New Update Or More✅", url=f"https://t.me/AerodynamicV1_UPDATE"
