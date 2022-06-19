@@ -11,18 +11,18 @@ async def start_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{START_IMG}",
         caption=f"""**━━━━━━━━━━━━━━━━━━
-💔 ʜᴇʏ {message.from_user.mention()} !
+💔 Hey {message.from_user.mention()} !
 
-        ᴛʜɪs ɪs [{bn}](t.me/{bu}), ᴀ sᴜᴘᴇʀ ғᴀsᴛ ᴠᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘ ᴠɪᴅᴇᴏᴄʜᴀᴛs...
+This Is [{bn}](t.me/{bu}), A Super Fast VC Player Bot For Telegram Group VideoChats...
 
-ᴀʟʟ ᴏꜰ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ ᴍʏ ᴄᴏᴍᴍᴀɴᴅ ʜᴀɴᴅʟᴇʀs : /help
+Press /help to see all the commands and how they work!
 ┏━━━━━━━━━━━━━━┓
 ┣★
-┣★ ᴍᴀᴅᴇ ʙʏ: [AerodynamicV1~🇮🇳](t.me/{me})
+┣★Made By: [AerodynamicV1~🇮🇳](t.me/AerodynamicV1_OFFICIAL)
 ┣★
 ┗━━━━━━━━━━━━━━┛
 
-💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇsᴛɪᴏɴs ᴀʙᴏᴜᴛ ᴍᴇ ᴛʜᴇɴ ᴅᴍ ᴛᴏ ᴍʏ [ᴏᴡɴᴇʀ](t.me/AerodynamicV1_OFFICIAL) ʙᴀʙʏ...
+💞 If You Have Any Questions About Me Then DM To My[👑Owner👑](t.me/AerodynamicV1_OFFICIAL).....
 ━━━━━━━━━━━━━━━━━━**""",
     reply_markup=InlineKeyboardMarkup(
             [
