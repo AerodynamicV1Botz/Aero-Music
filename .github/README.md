@@ -55,6 +55,8 @@
 
 ### 🧪 Get variable: SESSION_NAME BOT_TOKEN BOT_NAME BOT_USERNAME API_ID API_HASH OWNER_USERNAME SUPPORT_GROUP SUDO_USERS
 
+Fork then deployed directly don't change anything otherwise your bot is not working.
+
 [``Pyrogram Session``](https://telegram.me/String_Session_Generate_AeroBot)
 
 ## ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 🚀
