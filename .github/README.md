@@ -1,4 +1,4 @@
-<p align="center">
+33<p align="center">
     <br><b>🎧Aero Music🎶</b><br>
 </p>
 <p align="center"><a href="https://t.me/AerodynamicV1_Promotion"><img src="https://telegra.ph//file/c6d7af5a8dc30ea72764f.jpg"></a></p>
@@ -62,7 +62,7 @@ Fork then deployed directly don't change anything otherwise your bot is not work
 
 ## ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 🚀
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/AerodynamicV1Botz/Aero-Music"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="200" height="35.45"/></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/AerodynamicV1Botz/Aero-Music"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-darkpink?style=for-the-badge&logo=heroku" width="200" height="35.45"/></a></p>
 The easiest way to host this bot, Deploy on Heroku, Change the app country to Europe (it will help to make the bot more stable).
 
 ## ᴅᴇᴩʟᴏʏ ᴏɴ ᴏᴋᴛᴇᴛᴏ
